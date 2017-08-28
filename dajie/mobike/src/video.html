@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!--手机号码不被显示为拨号链接-->
+    <meta name="format-detection" content="telephone=no">
+    <!-- 浏览器全屏显示-->
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+
+    <!-- QQ分享-->
+    <meta itemprop="name" content="摩拜火星情报局，摩拜校招通关秘籍在这里！">
+    <meta itemprop="description" content="掌握摩拜校招全流程，了解摩拜的历程，畅谈摩拜的未来，飞速成长秘笈就在这里！">
+    <meta itemprop="image" content="https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503672810390/share.jpg">
+
+    <title>
+        摩拜火星情报局，摩拜校招通关秘籍在这里！
+    </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+            font-size: 100%;
+        }
+        
+        img,
+        input,
+        select,
+        textarea {
+            border: 0;
+        }
+        
+        i,
+        em,
+        span,
+        strong,
+        img {
+            font-style: normal;
+            font-weight: normal;
+            vertical-align: middle;
+        }
+        
+        ul,
+        ol,
+        li {
+            list-style-type: none;
+        }
+        
+        input,
+        textarea,
+        select {
+            font-size: inherit;
+            *font-size: 100%;
+            outline: none;
+        }
+        
+        textarea {
+            resize: none;
+        }
+        
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+        
+        input[type="number"]::-webkit-textfield-decoration-container {
+            background-color: #ffffff;
+        }
+        
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+        
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            /* 有无看不出差别 */
+        }
+        
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+        
+        body {
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            color: #000000;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: #d84922;
+        }
+        
+        html,
+        body {
+            background: #d84922;
+        }
+        
+        .animated {
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+        }
+        
+        .animated.infinite {
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+        }
+        
+        @-webkit-keyframes bicycleAni {
+            from {
+                opacity: 1;
+                -webkit-transform: translate3d(0, 5px, 0);
+                transform: translate3d(0, 5px, 0);
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes bicycleAni {
+            from {
+                opacity: 1;
+                -webkit-transform: translate3d(0, 5px, 0);
+                transform: translate3d(0, 5px, 0);
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .bicycleAni {
+            -webkit-animation-name: bicycleAni;
+            animation-name: bicycleAni;
+        }
+        
+        .loading-box {
+            background-color: #d84922;
+            background-image: url("https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503836860170/slogan.png");
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 10;
+        }
+        
+        .loading-box .logo-box {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: url("https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503836860170/logo.png") no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+            animation-direction: alternate;
+            -webkit-animation-direction: alternate;
+            -webkit-animation-duration: .5s;
+            animation-duration: .5s;
+        }
+        
+        .loading-box .progress-box {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            margin-top: -20px;
+            width: 100%;
+            height: 20px;
+        }
+        
+        .loading-box .progress-box .progress-bg {
+            background: #ecebeb;
+            width: 60%;
+            height: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .loading-box .progress-box .progress-bg .progress-bar {
+            background: #25282f;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 0;
+            -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+        }
+        
+        .video-page {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 9;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #d84922;
+        }
+        
+        .video-page .video-box {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .video-page .video-box video {
+            width: 100%;
+            margin: auto 0;
+        }
+        
+        .video-page .click-message-box {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: #d84922;
+            background-image: url("https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503887565835/click.png");
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="loadingBox" class="loading-box">
+        <div class="logo-box animated infinite bicycleAni"></div>
+        <div class="progress-box">
+            <div class="progress-bg">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="videoPage" class="video-page">
+        <div id="videoBox" class="video-box">
+            <video id="videoPlayer" width="750" height="1334" src="https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503651454571/video.mp4" preload="auto" x5-video-player-fullscreen="true" x5-video-player-type="h5" webkit-playsinline=""
+                playsinline=""></video>
+        </div>
+        <div id="videoClick" class="click-message-box" style="display:none;"></div>
+    </section>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="http://special.dajie.com/html/djappshare/dajieWebViewBridge.js"></script>
+    <script src="https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503900339150/sharewx.js"></script>
+    <script>
+        var LOAD_IMG = [
+            "https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503836860170/slogan.png",
+            "https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503836860170/logo.png",
+            "https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503887565835/click.png"
+        ];
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+        var isWeixinBrowser = (/micromessenger/i).test(navigator.userAgent);
+        var webHandle = {
+            video: {
+                $box: null,
+                player: null,
+                event: {
+                    play: function(player) {
+                        let self = this;
+                        if (player.paused) {
+                            player.play();
+                        }
+                        player.addEventListener('ended', () => {
+                            self.end();
+                        });
+                        player.addEventListener('x5videoexitfullscreen', () => {
+                            self.end();
+                        });
+                    },
+                    end: function(player) {
+                        window.location.href = "app.html";
+                    }
+                },
+                setVideoSize: function() {
+                    let self = this;
+                    let wHeight = document.documentElement.offsetHeight,
+                        wWidth = document.documentElement.offsetWidth,
+                        pHeight = wWidth * 1334 / 750;
+                    $(self.player).css({
+                        'height': pHeight,
+                        'margin-top': parseInt(wHeight - pHeight) / 2
+                    });
+                },
+                init: function() {
+                    let self = this;
+                    self.$box = $("#videoPage");
+                    self.player = $("#videoPlayer").get(0);
+                    self.setVideoSize();
+
+                    // self.$box.one('click', function(e) {
+                    //     self.event.play(self.player);
+                    // });
+                    $("#videoClick").one('touchend', function() {
+                        $(this).hide();
+                        setTimeout(function() {
+                            self.event.play(self.player);
+                        }, 100);
+                        // self.event.play(self.player);
+                    });
+                    document.addEventListener("WeixinJSBridgeReady", function() {
+                        setTimeout(function() {
+                            self.event.play(self.player);
+                        }, 500);
+                    }, false);
+                }
+            },
+
+            load: {
+                loadNum: 0,
+                $dom: null,
+                $progressBar: null,
+                start: function() {
+                    let s,
+                        self = this;
+                    for (let i = 0; i < LOAD_IMG.length; i++) {
+                        s = new Image();
+                        s.src = LOAD_IMG[i];
+                        s.onload = function() {
+                            self.loadNum++;
+                            self.end();
+                        }
+                    }
+                },
+                end: function() {
+                    let self = this;
+                    if (self.loadNum < LOAD_IMG.length) {
+                        self.animate();
+                    } else {
+                        setTimeout(() => {
+                            self.$progressBar.css({
+                                "webkitTransform": "translate3d(0, 0, 0)",
+                                "transform": "translate3d(0, 0, 0);"
+                            });
+                            self.$dom.hide().remove();
+                            $("#content-page-1").show();
+                        }, 3000);
+                    }
+                },
+                animate: function() {
+                    let self = this,
+                        imgCount = LOAD_IMG.length,
+                        proPercent = parseInt((imgCount - self.loadNum) / imgCount * 100) + "%";
+                    setTimeout(() => {
+                        self.$progressBar.css({
+                            "webkitTransform": "translate3d(-" + proPercent + ", 0, 0)",
+                            "transform": "translate3d(-" + proPercent + ", 0, 0);"
+                        });
+                    }, 2000);
+                },
+                init: function() {
+                    let self = this;
+                    self.$dom = $("#loadingBox");
+                    self.$progressBar = $("#progressBar");
+
+                    self.start();
+                }
+            },
+
+            init() {
+                let self = this;
+                self.load.init();
+                if (isAndroid || (isiOS && !isWeixinBrowser)) {
+                    $("#videoClick").show();
+                }
+                self.video.init();
+            }
+        };
+        webHandle.init();
+    </script>
+</body>
+
+</html>

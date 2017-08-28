@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+    font-size: 100%;
+}
+
+img,
+input,
+select,
+textarea {
+    border: 0;
+}
+
+i,
+em,
+span,
+strong,
+img {
+    font-style: normal;
+    font-weight: normal;
+    vertical-align: middle;
+}
+
+ul,
+ol,
+li {
+    list-style-type: none;
+}
+
+input,
+textarea,
+select {
+    font-size: inherit;
+    *font-size: 100%;
+    outline: none;
+}
+
+textarea {
+    resize: none;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+input[type="number"]::-webkit-textfield-decoration-container {
+    background-color: #ffffff;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    /* 有无看不出差别 */
+}
+
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #d84922;
+}
+
+div,
+a,
+img,
+section {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}

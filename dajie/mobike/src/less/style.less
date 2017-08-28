@@ -1,0 +1,442 @@
+html, body{
+    background: #d84922;
+}
+.loading-box{
+    background-color: #d84922;
+    background-image: url("../assets/images/loading/slogan.png");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center;
+
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+
+    .logo-box{
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        background: url("../assets/images/loading/logo.png") no-repeat;
+        background-size: auto 100%;
+        background-position: center;
+
+        animation-direction:alternate;
+        -webkit-animation-direction:alternate;
+
+        -webkit-animation-duration: .5s;
+        animation-duration: .5s;
+    }
+    .progress-box{
+        position: absolute;
+        left: 0;
+        top: 50%;
+
+        margin-top: -20px;
+
+        width: 100%;
+        height: 20px;
+
+        .progress-bg{
+            background: #ecebeb;
+            width: 60%;
+            height: 100%;
+            
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+
+            .progress-bar{
+                background: #25282f;
+                width: 100%;
+                height: 100%;
+
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: 0;
+
+                -webkit-transform: translate3d(-100%, 0, 0);
+                transform: translate3d(-100%, 0, 0);
+            }
+        }
+    }
+}
+.video-page{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #d84922;
+
+    .video-box{
+        width: 100%;
+        height: 100%;
+        video{
+            width: 100%;
+            margin: auto 0;
+        }
+    }
+}
+.audio-player{
+    width: 1px;
+    height: 1px;
+
+    position: absolute;
+    left: -1000px;
+    top: -1000px;
+}
+.audio-box{
+    width: 35px;
+    height: 35px;
+
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 8;
+}
+.audio-open-icon{
+    background: url("../assets/images/content/m-open.png") no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+.audio-close-icon{
+    background: url("../assets/images/content/m-close.png") no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+.content-page{
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    overflow: hidden;
+    .page-common, .element-box{
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .swiper-slide{
+        background-color: #d84922;
+    }
+    .back-btn{
+        background: url("../assets/images/content/back.png") no-repeat;
+        background-size: 100%;
+        background-position: center;
+
+        width: 60px;
+        height: 60px;
+
+        position: absolute;
+        left: 50%;
+        bottom: 5px;
+        z-index: 3;
+
+        margin-left: -30px;
+    }
+    .content-page-1{
+        background: url("../assets/images/content/page1/bg.jpg") no-repeat;
+        background-size: auto 100%;
+        background-position: center;
+        .star-1{
+            background: url("../assets/images/content/page1/c1.png") no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+        }
+        .star-2{
+            background: url("../assets/images/content/page1/c2.png") no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+            -webkit-animation-delay: .3s;
+            animation-delay: .3s;
+        }
+        .star-3{
+            background: url("../assets/images/content/page1/c3.png") no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+            -webkit-animation-delay: .6s;
+            animation-delay: .6s;
+        }
+        .human{
+            background: url("../assets/images/content/page1/human.png") no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+        }
+        .title{
+            background: url("../assets/images/content/page1/title.png") no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+            -webkit-animation-delay: 1s;
+            animation-delay: 1s;
+        }
+        .slogan{
+            background: url("../assets/images/content/page1/slogan.png") no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+            -webkit-animation-delay: 1.5s;
+            animation-delay: 1.5s;
+        }
+        .btn-box{
+            background: url("../assets/images/content/page1/btns.png") no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+            -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+            .btn-group{
+                position: absolute;
+                top: 59%;
+                left: 0;
+                width: 100%;
+                height: 30%;
+                .btn-row{
+                    width: 100%;
+                    height: 33.33%;
+                    display: flex;
+                    display: -webkit-flex;
+                    .btn-half{
+                        width: 50%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+    .content-page-2{
+        background-image: url("../assets/images/content/page2/bg.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: center;
+        .beiyou{
+            background: url("../assets/images/content/page2/beiyou.png") no-repeat;
+            background-size: 100% auto;
+            background-position: center;
+        }
+        .qinghua{
+            background: url("../assets/images/content/page2/qinghua.png") no-repeat;
+            background-size: 100% auto;
+            background-position: center;
+            -webkit-animation-delay: .5s;
+            animation-delay: .5s;
+        }
+        .chuanda{
+            background: url("../assets/images/content/page2/chuanda.png") no-repeat;
+            background-size: 100% auto;
+            background-position: center;
+            -webkit-animation-delay: 1s;
+            animation-delay: 1s;
+        }
+        .huake{
+            background: url("../assets/images/content/page2/huake.png") no-repeat;
+            background-size: 100% auto;
+            background-position: center;
+            -webkit-animation-delay: 1.5s;
+            animation-delay: 1.5s;
+        }
+        .shangjiao{
+            background: url("../assets/images/content/page2/shangjiao.png") no-repeat;
+            background-size: 100% auto;
+            background-position: center;
+            -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+        }
+    }
+    .content-page-3{
+        background-image: url("../assets/images/content/page3/bg.jpg");
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        background-position: center;
+        // .axis{
+        //     background: url("../assets/images/content/page3/s.png") no-repeat;
+        //     background-size: auto 100%;
+        //     background-position: center;
+        // }
+        .bicycle-1{
+            background: url("../assets/images/content/page3/b1.png") no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+        }
+        .solid-1{
+            background: url("../assets/images/content/page3/s1.png") no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+            -webkit-animation-delay: 1s;
+            animation-delay: 1s;
+        }
+        .part-1{
+            background: url("../assets/images/content/page3/t1.png") no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+            -webkit-animation-delay: 1.6s;
+            animation-delay: 1.6s;
+        }
+        .bicycle-2{
+            background: url("../assets/images/content/page3/b2.png") no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+            -webkit-animation-delay: 1.9s;
+            animation-delay: 1.9s;
+        }
+        .solid-2{
+            background: url("../assets/images/content/page3/s2.png") no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+            -webkit-animation-delay: 2.9s;
+            animation-delay: 2.9s;
+        }
+        .part-2{
+            background: url("../assets/images/content/page3/t2.png") no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+            -webkit-animation-delay: 3.2s;
+            animation-delay: 3.2s;
+        }   
+        .bicycle-3{
+            background: url("../assets/images/content/page3/b3.png") no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+            -webkit-animation-delay: 3.5s;
+            animation-delay: 3.5s;
+        }
+        .solid-3{
+            background: url("../assets/images/content/page3/s3.png") no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+            -webkit-animation-delay: 4.5s;
+            animation-delay: 4.5s;
+        }
+        .part-3{
+            background: url("../assets/images/content/page3/t3.png") no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+            -webkit-animation-delay: 4.8s;
+            animation-delay: 4.8s;
+        }
+        .solid-4{
+            background: url("../assets/images/content/page3/s4.png") no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+            -webkit-animation-delay: 5.1s;
+            animation-delay: 5.1s;
+        }
+    }
+    .content-page-4{
+        background-image: url("../assets/images/content/page4/bg.jpg");
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        background-position: center;
+        .canvas-box{
+            text-align: center;
+            z-index: 1;
+            canvas{
+                height: 100%;
+            }
+        }
+        .flow-part-1{
+            background: url("../assets/images/content/page4/p-1.png") no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+            z-index: 2;
+        }
+        .flow-part-2{
+            background: url("../assets/images/content/page4/p-2.png") no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+            z-index: 2;
+            -webkit-animation-delay: .5s;
+            animation-delay: .5s;
+        }
+        .flow-part-3{
+            background: url("../assets/images/content/page4/p-3.png") no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+            z-index: 2;
+            -webkit-animation-delay: 1s;
+            animation-delay: 1s;
+        }
+        .flow-part-4{
+            background: url("../assets/images/content/page4/p-4.png") no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+            z-index: 2;
+            -webkit-animation-delay: 1.5s;
+            animation-delay: 1.5s;
+        }
+        .flow-part-5{
+            background: url("../assets/images/content/page4/p-5.png") no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+            z-index: 2;
+            -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+        }
+        .flow-part-6{
+            background: url("../assets/images/content/page4/p-6.png") no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+            z-index: 2;
+            -webkit-animation-delay: 2.5s;
+            animation-delay: 2.5s;
+        }
+    }
+    .content-page-5{
+        background-image: url("../assets/images/content/page5/bg.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: center;
+        .rocket{
+            background: url("../assets/images/content/page5/rocket.png") no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+        }
+        .qr-code-box{
+            opacity: 0;
+            text-align: left;
+            img{
+                height: 100%;
+            }
+        }
+    }
+}
+@-webkit-keyframes bicycleAni {
+    from {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 5px, 0);
+        transform: translate3d(0, 5px, 0);
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bicycleAni {
+    from {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 5px, 0);
+        transform: translate3d(0, 5px, 0);
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.bicycleAni {
+    -webkit-animation-name: bicycleAni;
+    animation-name: bicycleAni;
+}
+

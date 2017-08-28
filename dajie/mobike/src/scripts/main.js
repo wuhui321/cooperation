@@ -58,7 +58,10 @@ const LOAD_IMG = [
     require("../assets/images/content/page3/s4.png"),
     require("../assets/images/content/page3/b1.png"),
     require("../assets/images/content/page3/b2.png"),
-    require("../assets/images/content/page3/b3.png")
+    require("../assets/images/content/page3/b3.png"),
+    // add page-5
+    require("../assets/images/content/page5/airship.png"),
+    require("../assets/images/content/page5/text.png")
 ];
 
 let webHandle = {
@@ -172,9 +175,9 @@ let webHandle = {
                     self.cleanAnimation();
                     self.startAnimation(s.activeIndex);
                     $("#audioTool").show();
-                    if (s.activeIndex === 4) {
-                        $("#audioTool").hide();
-                    }
+                    // if (s.activeIndex === 4) {
+                    //     $("#audioTool").hide();
+                    // }
                 },
                 onInit(s) {
                     event.toDetail(s);

@@ -103,12 +103,12 @@
             margin: 0;
             padding: 0;
             overflow: hidden;
-            background: #d84922;
+            background: #ff471a;
         }
         
         html,
         body {
-            background: #d84922;
+            background: #ff471a;
         }
         
         .animated {
@@ -151,8 +151,8 @@
         }
         
         .loading-box {
-            background-color: #d84922;
-            background-image: url("https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503836860170/slogan.png");
+            background-color: #ff471a;
+            background-image: url("https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503926454869/slogan.png");
             background-repeat: no-repeat;
             background-size: auto 100%;
             background-position: center;
@@ -162,6 +162,7 @@
             left: 0;
             top: 0;
             z-index: 10;
+            overflow: hidden;
         }
         
         .loading-box .logo-box {
@@ -170,7 +171,7 @@
             position: absolute;
             left: 0;
             top: 0;
-            background: url("https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503836860170/logo.png") no-repeat;
+            background: url("https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503926454869/logo.png") no-repeat;
             background-size: auto 100%;
             background-position: center;
             animation-direction: alternate;
@@ -182,10 +183,9 @@
         .loading-box .progress-box {
             position: absolute;
             left: 0;
-            top: 50%;
-            margin-top: -20px;
+            top: 48%;
             width: 100%;
-            height: 20px;
+            height: 5px;
         }
         
         .loading-box .progress-box .progress-bg {
@@ -217,7 +217,7 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
-            background: #d84922;
+            background: #ff471a;
         }
         
         .video-page .video-box {
@@ -236,8 +236,8 @@
             position: absolute;
             left: 0;
             top: 0;
-            background-color: #d84922;
-            background-image: url("https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503887565835/click.png");
+            background-color: #ff471a;
+            background-image: url("https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503927473271/click.png");
             background-repeat: no-repeat;
             background-size: auto 100%;
             background-position: center;
@@ -257,19 +257,20 @@
 
     <section id="videoPage" class="video-page">
         <div id="videoBox" class="video-box">
-            <video id="videoPlayer" width="750" height="1334" src="https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503651454571/video.mp4" preload="auto" x5-video-player-fullscreen="true" x5-video-player-type="h5" webkit-playsinline=""
+            <video id="videoPlayer" width="750" height="1334" src="https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503925897739/video.mp4" preload="auto" x5-video-player-fullscreen="true" x5-video-player-type="h5" webkit-playsinline=""
                 playsinline=""></video>
         </div>
         <div id="videoClick" class="click-message-box" style="display:none;"></div>
     </section>
+    <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script src="http://special.dajie.com/html/djappshare/dajieWebViewBridge.js"></script>
-    <script src="https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503900339150/sharewx.js"></script>
+    <script src="//ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503900339150/sharewx.js"></script>
     <script>
         var LOAD_IMG = [
-            "https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503836860170/slogan.png",
-            "https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503836860170/logo.png",
-            "https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503887565835/click.png"
+            "https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503926454869/slogan.png",
+            "https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503926454869/logo.png",
+            "https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503927473271/click.png"
         ];
         var u = navigator.userAgent;
         var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;

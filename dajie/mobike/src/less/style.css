@@ -1,9 +1,9 @@
 html,
 body {
-  background: #d84922;
+  background: #ff471a;
 }
 .loading-box {
-  background-color: #d84922;
+  background-color: #ff471a;
   background-image: url("../assets/images/loading/slogan.png");
   background-repeat: no-repeat;
   background-size: auto 100%;
@@ -32,10 +32,9 @@ body {
 .loading-box .progress-box {
   position: absolute;
   left: 0;
-  top: 50%;
-  margin-top: -20px;
+  top: 48%;
   width: 100%;
-  height: 20px;
+  height: 5px;
 }
 .loading-box .progress-box .progress-bg {
   background: #ecebeb;
@@ -64,7 +63,7 @@ body {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background: #d84922;
+  background: #ff471a;
 }
 .video-page .video-box {
   width: 100%;
@@ -116,7 +115,7 @@ body {
   top: 0;
 }
 .content-page .swiper-slide {
-  background-color: #d84922;
+  background-color: #ff471a;
 }
 .content-page .back-btn {
   background: url("../assets/images/content/back.png") no-repeat;
@@ -132,8 +131,8 @@ body {
 }
 .content-page .content-page-1 {
   background: url("../assets/images/content/page1/bg.jpg") no-repeat;
-  background-size: auto 100%;
-  background-position: center;
+  background-size: 100% auto;
+  background-position: center top;
 }
 .content-page .content-page-1 .star-1 {
   background: url("../assets/images/content/page1/c1.png") no-repeat;
@@ -142,7 +141,7 @@ body {
 }
 .content-page .content-page-1 .star-2 {
   background: url("../assets/images/content/page1/c2.png") no-repeat;
-  background-size: auto 100%;
+  background-size: 100% auto;
   background-position: center;
   -webkit-animation-delay: .3s;
   animation-delay: .3s;
@@ -182,20 +181,15 @@ body {
 }
 .content-page .content-page-1 .btn-box .btn-group {
   position: absolute;
-  top: 59%;
+  top: 54%;
   left: 0;
   width: 100%;
-  height: 30%;
+  height: 27%;
 }
 .content-page .content-page-1 .btn-box .btn-group .btn-row {
-  width: 100%;
-  height: 33.33%;
-  display: flex;
-  display: -webkit-flex;
-}
-.content-page .content-page-1 .btn-box .btn-group .btn-row .btn-half {
-  width: 50%;
-  height: 100%;
+  margin: 0 auto;
+  width: 33%;
+  height: 20%;
 }
 .content-page .content-page-2 {
   background-image: url("../assets/images/content/page2/bg.jpg");
@@ -379,10 +373,24 @@ body {
   background: url("../assets/images/content/page5/rocket.png") no-repeat;
   background-size: auto 100%;
   background-position: center;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+.content-page .content-page-5 .airship {
+  background: url("../assets/images/content/page5/airship.png") no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+  -webkit-animation-delay: .5s;
+  animation-delay: .5s;
+}
+.content-page .content-page-5 .text {
+  background: url("../assets/images/content/page5/text.png") no-repeat;
+  background-size: auto 100%;
+  background-position: center -50px;
 }
 .content-page .content-page-5 .qr-code-box {
   opacity: 0;
-  text-align: left;
+  text-align: center;
 }
 .content-page .content-page-5 .qr-code-box img {
   height: 100%;
@@ -410,4 +418,52 @@ body {
 .bicycleAni {
   -webkit-animation-name: bicycleAni;
   animation-name: bicycleAni;
+}
+@-webkit-keyframes rocketAni {
+  from {
+    opacity: 1;
+    -webkit-transform: translate3d(100%, 100%, 0);
+    transform: translate3d(100%, 100%, 0);
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes rocketAni {
+  from {
+    opacity: 1;
+    -webkit-transform: translate3d(100%, 100%, 0);
+    transform: translate3d(100%, 100%, 0);
+  }
+  to {
+    opacity: 1;
+  }
+}
+.rocketAni {
+  -webkit-animation-name: rocketAni;
+  animation-name: rocketAni;
+}
+@-webkit-keyframes airshipAni {
+  from {
+    opacity: 1;
+    -webkit-transform: translate3d(-100%, 100%, 0);
+    transform: translate3d(-100%, 100%, 0);
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes airshipAni {
+  from {
+    opacity: 1;
+    -webkit-transform: translate3d(-100%, 100%, 0);
+    transform: translate3d(-100%, 100%, 0);
+  }
+  to {
+    opacity: 1;
+  }
+}
+.airshipAni {
+  -webkit-animation-name: airshipAni;
+  animation-name: airshipAni;
 }

@@ -1,3 +1,4 @@
+require("./lib/sharewx.js");
 var LOAD_IMG = [
     "https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503926454869/slogan.png",
     "https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503926454869/logo.png",

@@ -4,7 +4,7 @@ jQuery(document).ready(function() {
     //再把当前文件引入 <script type="text/javascript" src="sharewx.js"></script>
 
     var descContent = "掌握摩拜校招全流程，了解摩拜的历程，畅谈摩拜的未来，飞速成长秘笈就在这里！"; // 微信分享描述
-    var shareTitle = '摩拜火星情报局，摩拜校招通关秘籍在这里！'; // 微信分享标题
+    var shareTitle = '这是一个让你“摩拜”的校招H5'; // 微信分享标题
     // 微信分享图片
     var imgUrl = 'https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503672810390/share.jpg'; //图片路径
 

@@ -60,7 +60,7 @@ module.exports = {
         new htmlWebpackPlugin({
             template: './src/app.html',
             filename: 'app.html',
-            chunks: ['video'],
+            chunks: ['main'],
             title: '摩拜火星情报局，摩拜校招通关秘籍在这里！',
             shareTitle: '摩拜火星情报局，摩拜校招通关秘籍在这里！',
             shareDesc: '掌握摩拜校招全流程，了解摩拜的历程，畅谈摩拜的未来，飞速成长秘笈就在这里！',

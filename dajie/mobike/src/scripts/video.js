@@ -2,7 +2,8 @@ require("./lib/sharewx.js");
 var LOAD_IMG = [
     "https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503926454869/slogan.png",
     "https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503926454869/logo.png",
-    "https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503927473271/click.png"
+    "https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503927473271/click.png",
+    "https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1504152382847/skip.png"
 ];
 var u = navigator.userAgent;
 var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
@@ -50,6 +51,10 @@ var webHandle = {
                 setTimeout(function() {
                     self.event.play(self.player);
                 }, 100);
+            });
+            $(".skip-btn").one('touchend', function(e) {
+                e.stopPropagation();
+                self.event.end();
             });
             document.addEventListener("WeixinJSBridgeReady", function() {
                 setTimeout(function() {

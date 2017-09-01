@@ -58,12 +58,24 @@ module.exports = {
             shareTitle: '摩拜火星情报局，摩拜校招通关秘籍在这里！',
             shareDesc: '掌握摩拜校招全流程，了解摩拜的历程，畅谈摩拜的未来，飞速成长秘笈就在这里！',
             shareUrl: '',
-            shareImg: 'https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503672810390/share.jpg'
+            shareImg: 'https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503672810390/share.jpg',
+            minify: {
+                removeComments: true,
+                collapseWhitespace: true,
+                minifyCSS: true,
+                minifyJS: true
+            }
         }),
         new htmlWebpackPlugin({
             template: './src/video.html',
             filename: 'video.html',
-            chunks: ['video']
+            chunks: ['video'],
+            minify: {
+                removeComments: true,
+                collapseWhitespace: true,
+                minifyCSS: true,
+                minifyJS: true
+            }
         }),
         new extractTextPlugin("styles.css"),
         new webpack.ProvidePlugin({

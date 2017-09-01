@@ -91,8 +91,7 @@ var webHandle = {
                         "transform": "translate3d(0, 0, 0);"
                     });
                     self.$dom.hide().remove();
-                    $("#content-page-1").show();
-                }, 3000);
+                }, 4000);
             }
         },
         animate: function() {

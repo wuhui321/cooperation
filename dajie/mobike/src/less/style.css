@@ -4,7 +4,7 @@ body {
 }
 .loading-box {
   background-color: #ff471a;
-  background-image: url("../assets/images/loading/slogan_dajie.png");
+  background-image: url("../assets/images/loading/slogan.png");
   background-repeat: no-repeat;
   background-size: auto 100%;
   background-position: center;
@@ -239,6 +239,8 @@ body {
   position: absolute;
   left: 58%;
   top: 52%;
+  -webkit-animation-delay: 2.3s;
+  animation-delay: 2.3s;
 }
 .content-page .content-page-3 {
   background-image: url("../assets/images/content/page3/bg.jpg");

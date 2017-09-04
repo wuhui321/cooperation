@@ -4,7 +4,7 @@ body {
 }
 .loading-box {
   background-color: #ff471a;
-  background-image: url("../assets/images/loading/slogan.png");
+  background-image: url("../assets/images/loading/slogan_dajie.png");
   background-repeat: no-repeat;
   background-size: auto 100%;
   background-position: center;
@@ -229,6 +229,16 @@ body {
   background-position: center;
   -webkit-animation-delay: 2s;
   animation-delay: 2s;
+}
+.content-page .content-page-2 .toDaJieList {
+  display: block;
+}
+.content-page .content-page-2 .toDaJieList img {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  left: 58%;
+  top: 52%;
 }
 .content-page .content-page-3 {
   background-image: url("../assets/images/content/page3/bg.jpg");

@@ -1,6 +1,6 @@
 require("./lib/sharewx.js");
 var LOAD_IMG = [
-    "https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1504488964875/slogan.png",
+    "https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1504524297458/slogan_dajie.png",
     "https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503926454869/logo.png",
     "https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503927473271/click.png",
     "https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1504152382847/skip.png"

@@ -61,7 +61,9 @@ const LOAD_IMG = [
     require("../assets/images/content/page3/b3.png"),
     // add page-5
     require("../assets/images/content/page5/airship.png"),
-    require("../assets/images/content/page5/text.png")
+    require("../assets/images/content/page5/text.png"),
+    // add page-2
+    require("../assets/images/content/page2/hand.png")
 ];
 
 let webHandle = {

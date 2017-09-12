@@ -1,0 +1,335 @@
+html, body{
+    background: #000000;
+}
+.loading-box{
+    background-image: url("../assets/images/loading/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+
+    .logo-box{
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        left: 0;
+        top: 0;
+        .adidas{
+            width: 100%;
+            height: 100%;
+    
+            position: absolute;
+            left: 0;
+            top: 0;
+    
+            background: url("../assets/images/loading/adidas_logo.png") no-repeat;
+            background-size: auto 100%;
+            background-position: center left;
+        }
+        .dajie{
+            width: 100%;
+            height: 100%;
+    
+            position: absolute;
+            left: 0;
+            top: 0;
+    
+            background: url("../assets/images/loading/dajie_logo.png") no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+        }
+    }
+    .shoes-box{
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        background-position: center;
+
+        -webkit-animation-duration: 3s;
+        animation-duration: 3s;
+        -webkit-animation-timing-function: steps(1);
+        animation-timing-function: steps(1);
+    }
+    .progress-text{
+        position: absolute;
+        left: 0;
+        top: 54%;
+
+        width: 100%;
+        height: 20px;
+        line-height: 20px;
+        color: #ffffff;
+
+        text-align: center;
+    }
+}
+.video-page{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: url("../assets/images/video/poster.jpg") no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    opacity: 0;
+
+    .video-box{
+        width: 100%;
+        height: 100%;
+        video{
+            width: 100%;
+            margin: auto 0;
+        }
+    }
+    .click-message-box{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: #000000;
+        background-image: url("../assets/images/video/hint.png");
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: center top;
+    }
+}
+.audio-player{
+    width: 1px;
+    height: 1px;
+
+    position: absolute;
+    left: -1000px;
+    top: -1000px;
+}
+.audio-box{
+    width: 27px;
+    height: 27px;
+
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 8;
+}
+.audio-open-icon{
+    background: url("../assets/images/content/m_open.png") no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+.audio-close-icon{
+    background: url("") no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+.content-box{
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    overflow: hidden;
+    background-image: url("../assets/images/content/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+
+    .element-box{
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .brick-box{
+        .brick-close{
+            background: url("../assets/images/content/brick_close.jpg") no-repeat;
+            background-size: 100% auto;
+            background-position: center;
+        }
+        .brick-open{
+            background: url("../assets/images/content/brick_open.jpg") no-repeat;
+            background-size: 100% auto;
+            background-position: center;
+            -webkit-animation-delay: 2.4s;
+            animation-delay: 2.4s;
+        }
+    }
+    .adidas-logo{
+        background: url("../assets/images/content/adidas_logo.png") no-repeat;
+        background-size: auto 100%;
+        background-position: center left;
+        -webkit-animation-delay: .6s;
+        animation-delay: .6s;
+    }
+    .slogan{
+        background: url("../assets/images/content/slogan.png") no-repeat;
+        background-size: auto 100%;
+        background-position: center;
+        -webkit-animation-delay: 1.2s;
+        animation-delay: 1.2s;
+    }
+    .title{
+        background: url("../assets/images/content/title.png") no-repeat;
+        background-size: 100% auto;
+        background-position: center;
+        -webkit-animation-delay: 1.8s;
+        animation-delay: 1.8s;
+    }
+    .text1{
+        background: url("../assets/images/content/text_1.png") no-repeat;
+        background-size: 100% auto;
+        background-position: center;
+        -webkit-animation-delay: 3s;
+        animation-delay: 3s;
+    }
+    .text2{
+        background: url("../assets/images/content/text_2.png") no-repeat;
+        background-size: 100% auto;
+        background-position: center;
+        -webkit-animation-delay: 3.6s;
+        animation-delay: 3.6s;
+    }
+    .text3{
+        background: url("../assets/images/content/text_3.png") no-repeat;
+        background-size: 100% auto;
+        background-position: center;
+        -webkit-animation-delay: 4.2s;
+        animation-delay: 4.2s;
+        .text1-url{
+            width: 54%;
+            height: 16%;
+            top: 46%;
+        }
+        .text2-url{
+            width: 44%;
+            height: 16%;
+            top: 58%;
+            right: 0;
+            left: unset;
+        }
+        .share-hint-btn{
+            width: 44%;
+            height: 16%;
+            border: 0;
+            top: 67%;
+            background: transparent;
+        }
+    }
+    .share-hint-page{
+        z-index: 9;
+        background-color: rgba(0, 0, 0, 0.7);
+        .picture{
+            background: url("../assets/images/content/share_hint.png") no-repeat;
+            background-size: auto 100%;
+            background-position: center right;
+        }
+        .close-btn{
+            width: 43px;
+            height: 43px;
+            background: url("../assets/images/content/share_close.png") no-repeat;
+            background-size: 100%;
+            background-position: center;
+
+            position: absolute;
+            left: 50%;
+            margin-left: -21px;
+            bottom: 10%;
+            border: 0;
+        }
+    }
+}
+@-webkit-keyframes shoesAni {
+    0%{
+        background-image: url("../assets/images/loading/shoes_1.png");
+    }
+    25%{
+        background-image: url("../assets/images/loading/shoes_2.png");
+    }
+    50%{
+        background-image: url("../assets/images/loading/shoes_3.png");
+    }
+    75%{
+        background-image: url("../assets/images/loading/shoes_4.png");
+    }
+    100%{
+        background-image: url("../assets/images/loading/shoes_1.png");
+    }
+}
+
+@keyframes shoesAni {
+    0%{
+        background-image: url("../assets/images/loading/shoes_1.png");
+    }
+    25%{
+        background-image: url("../assets/images/loading/shoes_2.png");
+    }
+    50%{
+        background-image: url("../assets/images/loading/shoes_3.png");
+    }
+    75%{
+        background-image: url("../assets/images/loading/shoes_4.png");
+    }
+    100%{
+        background-image: url("../assets/images/loading/shoes_1.png");
+    }
+}
+
+.shoesAni {
+    -webkit-animation-name: shoesAni;
+    animation-name: shoesAni;
+}
+@-webkit-keyframes scaleAni {
+    from{
+        -webkit-transform: scale3d(3, 3, 1);
+        transform: scale3d(3, 3, 1);
+        opacity: 0;
+    }
+    to{
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleAni {
+    from{
+        -webkit-transform: scale3d(3, 3, 1);
+        transform: scale3d(3, 3, 1);
+        opacity: 0;
+    }
+    to{
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+    }
+}
+
+.scaleAni {
+    -webkit-animation-name: scaleAni;
+    animation-name: scaleAni;
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    -webkit-animation-duration: .7s;
+    animation-duration: .7s;
+}
+

@@ -68,6 +68,10 @@ var webHandle = {
                         $shareHintPage.hide();
                     });
                 });
+                $("#pageText3").on("webkitAnimationEnd", function() {
+                    // $("#pageText1, #pageText2, #pageText3").removeClass("scaleAni").addClass("infinite shake");
+                    $("#pageText1, #pageText2, #pageText3").removeClass("scaleAni").addClass("aniCount shakeAni");
+                });
             }
         },
         setVideoSize: function() {

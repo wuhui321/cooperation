@@ -96,11 +96,11 @@ var webHandle = {
                 e.stopPropagation();
                 self.event.end();
             });
-            document.addEventListener("WeixinJSBridgeReady", function() {
-                setTimeout(function() {
-                    self.event.play(self.player);
-                }, 500);
-            }, false);
+            // document.addEventListener("WeixinJSBridgeReady", function() {
+            //     setTimeout(function() {
+            //         self.event.play(self.player);
+            //     }, 500);
+            // }, false);
         }
     },
 
@@ -154,9 +154,10 @@ var webHandle = {
     init() {
         let self = this;
         self.load.init();
-        if (isAndroid || (isiOS && !isWeixinBrowser)) {
-            $("#videoClick").show();
-        }
+        // if (isAndroid || (isiOS && !isWeixinBrowser)) {
+        //     $("#videoClick").show();
+        // }
+        $("#videoClick").show();
         self.video.init();
     }
 };

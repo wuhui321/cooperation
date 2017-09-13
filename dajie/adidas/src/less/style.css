@@ -180,15 +180,15 @@ body {
   background: url("../assets/images/content/text_2.png") no-repeat;
   background-size: 100% auto;
   background-position: center;
-  -webkit-animation-delay: 3.6s;
-  animation-delay: 3.6s;
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
 }
 .content-box .text3 {
   background: url("../assets/images/content/text_3.png") no-repeat;
   background-size: 100% auto;
   background-position: center;
-  -webkit-animation-delay: 4.2s;
-  animation-delay: 4.2s;
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
 }
 .content-box .text3 .text1-url {
   width: 54%;

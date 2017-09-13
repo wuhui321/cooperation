@@ -8,9 +8,9 @@ module.exports = {
         video: path.resolve(__dirname, './src/scripts/video.js')
     },
     output: {
-        filename: '[name].bundle.js',
+        filename: './js/[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
-        publicPath: './'
+        publicPath: 'https://t1toptest.yidianzixun.com/cooperation/dajie/adidas/'
     },
     module: {
         rules: [{
@@ -40,8 +40,15 @@ module.exports = {
             test: /\.(png|svg|jpg|gif)$/,
             use: [
                 'file-loader?name=images/[hash].[ext]'
-                // 'file-loader'
             ]
+        }, {
+            // test: /\.(png|jpg|gif)$/,
+            // use: [{
+            //     loader: 'url-loader',
+            //     options: {
+            //         limit: 8192
+            //     }
+            // }]
         }, {
             // test: /\.(htm|html)$/i,
             // use: ['html-withimg-loader']
@@ -60,25 +67,15 @@ module.exports = {
             shareTitle: '摩拜火星情报局，摩拜校招通关秘籍在这里！',
             shareDesc: '掌握摩拜校招全流程，了解摩拜的历程，畅谈摩拜的未来，飞速成长秘笈就在这里！',
             shareUrl: '',
-            shareImg: 'https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503672810390/share.jpg',
-            minify: {
-                removeComments: true,
-                collapseWhitespace: true,
-                minifyCSS: true,
-                minifyJS: true
-            }
+            shareImg: 'https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503672810390/share.jpg'
         }),
         new extractTextPlugin("./css/[name].styles.css"),
+        // new extractTextPlugin("[name].styles.css"),
         new webpack.ProvidePlugin({
             $: "jquery",
             jQuery: "jquery",
             "window.jQuery": "jquery"
-        }),
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false,
-                drop_console: false,
-            }
         })
-    ]
+    ],
+    devtool: 'source-map'
 };

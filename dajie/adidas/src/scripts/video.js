@@ -1,5 +1,6 @@
 require("../css/reset.css");
 require("../css/animate.css");
+require("../less/adidasAni.less");
 require("../less/style.less");
 // require("./lib/sharewx.js");
 var LOAD_IMG = [

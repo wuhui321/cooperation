@@ -3,8 +3,8 @@ jQuery(document).ready(function() {
     //页面中引入<script src="http://special.dajie.com/html/djappshare/dajieWebViewBridge.js"></script>
     //再把当前文件引入 <script type="text/javascript" src="sharewx.js"></script>
 
-    var descContent = "和摩拜一起解锁无限可能的未来"; // 微信分享描述
-    var shareTitle = '这是一个让你“摩拜”的校招H5'; // 微信分享标题
+    var descContent = "我潮流我自由我享受，我在阿迪等你一起freestyle！"; // 微信分享描述
+    var shareTitle = '来阿迪，工作生活一起6，才是真正freestyle！'; // 微信分享标题
     // 微信分享图片
     var imgUrl = 'https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503672810390/share.jpg'; //图片路径
 

@@ -36,30 +36,31 @@
 
     <section id="videoPage" class="video-page">
         <div id="videoBox" class="video-box">
-            <video id="videoPlayer" width="480" height="852" poster="//ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1505200196927/poster.jpg" src="//ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1505356418720/video.mp4"
+            <video id="videoPlayer" width="480" height="852" poster="//ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1505200196927/poster.jpg" src="//ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1505403734155/video.mp4"
                 x5-video-player-fullscreen="true" x5-video-player-type="h5" webkit-playsinline="" playsinline=""></video>
             <div class="skip-btn"></div>
         </div>
         <div id="videoClick" class="click-message-box" style="display:none;">
-            <div class="skip-btn"></div>
+            <div class="skip-btn" style="display:none;"></div>
             <div class="hand-box animated infinite handAni">
                 <div class="hand"></div>
             </div>
         </div>
     </section>
     <section class="content-box">
-        <div id="animationBox" class="element-box animation-box" style="display:none;">
-            <div class="element-box brick-box">
+        <div id="animationBox" class="element-box animation-box">
+            <div id="brick" class="element-box brick-box">
                 <!-- <div class="element-box animated fadeIn brick-close"></div> -->
                 <!-- <div class="element-box animated scaleAni brick-open"></div> -->
-                <div class="element-box animated fadeIn brick-open"></div>
+                <div id="brickOpen" class="element-box animated fadeIn brick-open"></div>
             </div>
-            <div class="element-box animated fadeIn adidas-logo"></div>
-            <div class="element-box animated fadeIn slogan"></div>
-            <div class="element-box animated fadeIn title"></div>
-            <div id="pageText1" class="element-box animated scaleAni text1"></div>
-            <div id="pageText2" class="element-box animated scaleAni text2"></div>
-            <div id="pageText3" class="element-box animated scaleAni text3">
+            <div id="adidasLogo" class="element-box animated fadeIn adidas-logo" style="display:none;"></div>
+            <!-- <div class="element-box animated fadeIn slogan"></div> -->
+            <!-- <div class="element-box animated fadeIn title"></div> -->
+            <!-- <div id="pageText1" class="element-box animated scaleAni text1"></div> -->
+            <!-- <div id="pageText2" class="element-box animated scaleAni text2"></div> -->
+            <!-- <div id="pageText3" class="element-box animated scaleAni text3"></div> -->
+            <div id="pageText3" class="element-box text3" style="display: none;">
                 <a href="//weizhan.dajie.com/1001876/netjob/list" class="element-box text1-url"></a>
                 <a href="#" class="element-box text2-url"></a>
                 <button id="shareHintBtn" class="element-box share-hint-btn"></button>
@@ -72,8 +73,8 @@
         </div>
     </section>
     <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-    <script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-    <script src="//special.dajie.com/html/djappshare/dajieWebViewBridge.js"></script>
+    <!-- <script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="//special.dajie.com/html/djappshare/dajieWebViewBridge.js"></script> -->
 </body>
 
 </html>

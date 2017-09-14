@@ -84,6 +84,17 @@ body {
   width: 100%;
   margin: auto 0;
 }
+.video-page .skip-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 61px;
+  height: 23px;
+  background-image: url("../assets/images/video/skip.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
 .video-page .click-message-box {
   width: 100%;
   height: 100%;
@@ -164,16 +175,26 @@ body {
   background-position: center;
 }
 .content-box .brick-box .brick-open {
-  background: url("../assets/images/content/brick_open.jpg") no-repeat;
+  background-image: transparent;
+  background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center;
+  -webkit-animation-delay: .6s;
+  animation-delay: .6s;
+}
+.content-box .brick-box canvas {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  -webkit-transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, -50%, 0);
 }
 .content-box .adidas-logo {
   background: url("../assets/images/content/adidas_logo.png") no-repeat;
   background-size: auto 100%;
   background-position: center left;
-  -webkit-animation-delay: .6s;
-  animation-delay: .6s;
 }
 .content-box .slogan {
   background: url("../assets/images/content/slogan.png") no-repeat;
@@ -198,13 +219,6 @@ body {
 }
 .content-box .text2 {
   background: url("../assets/images/content/text_2.png") no-repeat;
-  background-size: 100% auto;
-  background-position: center;
-  -webkit-animation-delay: 3s;
-  animation-delay: 3s;
-}
-.content-box .text3 {
-  background: url("../assets/images/content/text_3.png") no-repeat;
   background-size: 100% auto;
   background-position: center;
   -webkit-animation-delay: 3s;

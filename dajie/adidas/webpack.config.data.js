@@ -1,5 +1,5 @@
 module.exports = {
-    title: '打破界限',
+    title: '阿迪达斯2018校园招聘',
     shareTitle: '阿迪达斯2018校园招聘',
     shareDesc: '阿迪达斯2018校园招聘正式开启，精彩mv带你领略阿迪freestyle',
     shareUrl: '',

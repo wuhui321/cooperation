@@ -99,6 +99,17 @@ html, body{
             margin: auto 0;
         }
     }
+    .skip-btn {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 61px;
+        height: 23px;
+        background-image: url("../assets/images/video/skip.png");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center;
+    }
     .click-message-box{
         width: 100%;
         height: 100%;
@@ -190,19 +201,32 @@ html, body{
             background-position: center;
         }
         .brick-open{
-            background: url("../assets/images/content/brick_open.jpg") no-repeat;
+            // background-image: url("../assets/images/content/brick_open.jpg");
+            background-image: transparent;
+            background-repeat: no-repeat;
             background-size: 100% auto;
             background-position: center;
             // -webkit-animation-delay: 2.4s;
             // animation-delay: 2.4s;
+            -webkit-animation-delay: .6s;
+            animation-delay: .6s;
+        }
+        canvas{
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            -webkit-transform-origin: center;
+            transform-origin: center;
+            -webkit-transform: translate3d(0,-50%,0);
+            transform: translate3d(0,-50%,0);
         }
     }
     .adidas-logo{
         background: url("../assets/images/content/adidas_logo.png") no-repeat;
         background-size: auto 100%;
         background-position: center left;
-        -webkit-animation-delay: .6s;
-        animation-delay: .6s;
+        // -webkit-animation-delay: .6s;
+        // animation-delay: .6s;
     }
     .slogan{
         background: url("../assets/images/content/slogan.png") no-repeat;
@@ -233,11 +257,11 @@ html, body{
         animation-delay: 3s;
     }
     .text3{
-        background: url("../assets/images/content/text_3.png") no-repeat;
-        background-size: 100% auto;
-        background-position: center;
-        -webkit-animation-delay: 3s;
-        animation-delay: 3s;
+        // background: url("../assets/images/content/text_3.png") no-repeat;
+        // background-size: 100% auto;
+        // background-position: center;
+        // -webkit-animation-delay: 3s;
+        // animation-delay: 3s;
         .text1-url{
             width: 54%;
             height: 16%;

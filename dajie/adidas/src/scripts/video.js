@@ -9,6 +9,10 @@ var LOAD_IMG = [
     "https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1505200196927/poster.jpg",
     require("../assets/images/video/hint.png"),
     require("../assets/images/video/poster.jpg"),
+    require("../assets/images/video/hand.png"),
+    require("../assets/images/video/circle-1.png"),
+    require("../assets/images/video/circle-2.png"),
+    require("../assets/images/video/circle-3.png"),
     // loading
     require("../assets/images/loading/bg.jpg"),
     require("../assets/images/loading/adidas_logo.png"),

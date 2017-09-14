@@ -11,7 +11,7 @@ module.exports = {
     output: {
         filename: './js/[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
-        publicPath: 'https://t1toptest.yidianzixun.com/cooperation/dajie/adidas/'
+        publicPath: 'https://t1toptest.yidianzixun.com/cooperation/dajie/adidas' + (+new Date()) + '/'
     },
     module: {
         rules: [{

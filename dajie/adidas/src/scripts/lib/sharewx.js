@@ -3,10 +3,10 @@ jQuery(document).ready(function() {
     //页面中引入<script src="http://special.dajie.com/html/djappshare/dajieWebViewBridge.js"></script>
     //再把当前文件引入 <script type="text/javascript" src="sharewx.js"></script>
 
-    var descContent = "我潮流我自由我享受，我在阿迪等你一起freestyle！"; // 微信分享描述
-    var shareTitle = '来阿迪，工作生活一起6，才是真正freestyle！'; // 微信分享标题
+    var descContent = "阿迪达斯2018校园招聘正式开启，精彩mv带你领略阿迪freestyle"; // 微信分享描述
+    var shareTitle = '阿迪达斯2018校园招聘'; // 微信分享标题
     // 微信分享图片
-    var imgUrl = 'https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1503672810390/share.jpg'; //图片路径
+    var imgUrl = 'https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1505369948202/share.jpg'; //图片路径
 
     if (imgUrl.indexOf(window.location.protocol) < 0) {
         if (imgUrl[0] == '.') {
@@ -19,8 +19,7 @@ jQuery(document).ready(function() {
     var localSearch = window.location.search;
 
     // 微信分享网址
-    // var message_link = localUrl + localSearch;
-    var message_link = "https://company.dajie.com/nb/vsite/mobike_h5/video.html";
+    var message_link = localUrl + localSearch;
 
     dajieApp.set('shareOption', {
         "isShow": "true"

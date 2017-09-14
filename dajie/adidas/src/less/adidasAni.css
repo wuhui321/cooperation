@@ -153,6 +153,6 @@
   animation-name: handAni;
   -webkit-animation-timing-function: steps(1);
   animation-timing-function: steps(1);
-  -webkit-animation-duration: 1s !important;
-  animation-duration: 1s !important;
+  -webkit-animation-duration: .7s !important;
+  animation-duration: .7s !important;
 }

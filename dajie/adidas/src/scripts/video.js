@@ -2,7 +2,7 @@ require("../css/reset.css");
 require("../css/animate.css");
 require("../less/adidasAni.less");
 require("../less/style.less");
-// require("./lib/sharewx.js");
+require("./lib/sharewx.js");
 var LOAD_IMG = [
     // require("../assets/images/video/"),
     // video
@@ -135,11 +135,13 @@ var webHandle = {
             } else {
                 setTimeout(() => {
                     self.$progressText.text("100%");
-                    self.$dom.hide().remove();
-                    webHandle.video.$box.css({
-                        "opacity": 1
-                    });
-                }, 500);
+                    setTimeout(function() {
+                        self.$dom.hide().remove();
+                        webHandle.video.$box.css({
+                            "opacity": 1
+                        });
+                    }, 1000);
+                }, 5000);
             }
         },
         animate: function() {
@@ -148,7 +150,7 @@ var webHandle = {
                 proPercent = parseInt((self.loadNum) / imgCount * 100) + "%";
             setTimeout(() => {
                 self.$progressText.text(proPercent);
-            }, 500);
+            }, 2000);
         },
         init: function() {
             let self = this;

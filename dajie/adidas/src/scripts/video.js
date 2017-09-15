@@ -55,6 +55,38 @@ var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
 var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
 var isWeixinBrowser = (/micromessenger/i).test(navigator.userAgent);
 var webHandle = {
+    skip: false,
+    monitor: {
+        MT: function() {
+            var s = new Image();
+            s.src = "https://track.dajie.com/CfHQssljRgT7M";
+            s.onload = function() {
+                window.location.href = "https://company.dajie.com/nb/vsite/adidas_2018/manage.html?id=2";
+            }
+            setTimeout(function() {
+                window.location.href = "https://company.dajie.com/nb/vsite/adidas_2018/manage.html?id=2";
+            }, 300);
+        },
+        register: function() {
+            var s = new Image();
+            s.src = "https://track.dajie.com/CTws1xZ7fPInZ";
+            s.onload = function() {
+                window.location.href = "https://company.dajie.com/nb/vsite/adidas_2018/enroll.html";
+            }
+            setTimeout(function() {
+                window.location.href = "https://company.dajie.com/nb/vsite/adidas_2018/enroll.html";
+            }, 300);
+        }
+    },
+    pageHistory: {
+        push: function(flag = "#played") {
+            var state = {
+                title: "title",
+                url: "#"
+            };
+            window.history.pushState(state, "title", flag);
+        }
+    },
     video: {
         $box: null,
         player: null,
@@ -71,12 +103,17 @@ var webHandle = {
                     self.end();
                 });
             },
-            end: function(player) {
+            end: function() {
                 console.log("video play end");
                 var $shareHintBtn = $("#shareHintBtn"),
                     $shareHintPage = $("#shareHintPage"),
-                    $closeHintBtn = $("#closeHintBtn");
-                webHandle.video.$box.hide().remove();
+                    $closeHintBtn = $("#closeHintBtn"),
+                    $videoPage = $("#videoPage");
+                if (!webHandle.skip) {
+                    webHandle.video.$box.hide().remove();
+                } else {
+                    $videoPage.hide().remove();
+                }
                 // $("#animationBox").show();
                 $shareHintBtn.on("click", function(e) {
                     e.stopPropagation();
@@ -86,11 +123,30 @@ var webHandle = {
                         $shareHintPage.hide();
                     });
                 });
-                webHandle.pixiAni.start();
-                // $("#adidasLogo").on("webkitAnimationEnd", function() {
-                //     $("#pageText3").show();
-                //     webHandle.pixiAni.start();
-                // });
+                $("#MT_Btn").on("click", function() {
+                    if (webHandle.skip) {
+                        webHandle.pageHistory.push("");
+                    } else {
+                        webHandle.pageHistory.push();
+                    }
+                    webHandle.monitor.MT();
+                });
+                $("#registBtn").on("click", function() {
+                    if (webHandle.skip) {
+                        webHandle.pageHistory.push("");
+                    } else {
+                        webHandle.pageHistory.push();
+                    }
+                    webHandle.monitor.register();
+                });
+                // webHandle.pixiAni.start();
+                setTimeout(function() {
+                    $("#adidasLogo, #pageText3").show();
+                }, 300);
+                $("#adidasLogo").on("webkitAnimationEnd", function() {
+                    $("#pageText3").show();
+                    webHandle.pixiAni.start();
+                });
             }
         },
         setVideoSize: function() {
@@ -156,23 +212,22 @@ var webHandle = {
                     if (self.imgCount < frame_start.length - 1) {
                         self.aniSprite.texture = self.startTexture[self.imgCount];
                         // self.aniSprite.texture = PIXI.Texture.fromImage(frame_start[self.imgCount]);
-                        console.log(self.imgCount);
-                        if (self.imgCount === 35) {
-                            $("#adidasLogo, #pageText3").show();
-                        }
+                        // if (self.imgCount === 35) {
+                        //     $("#adidasLogo, #pageText3").show();
+                        // }
                         self.imgCount++;
                     } else {
                         self.imgCount = 0;
                         self.flag = "loop";
                     }
-                } else if (self.flag && self.flag === 'loop') {
-                    if (self.imgCount > frame_loop.length - 1) {
-                        self.imgCount = 0;
-                    }
-                    console.log(self.imgCount);
-                    self.aniSprite.texture = self.loopTexture[self.imgCount];
-                    self.imgCount++;
                 }
+                // else if (self.flag && self.flag === 'loop') {
+                //     if (self.imgCount > frame_loop.length - 1) {
+                //         self.imgCount = 0;
+                //     }
+                //     self.aniSprite.texture = self.loopTexture[self.imgCount];
+                //     self.imgCount++;
+                // }
             }, 100);
             setTimeout(function() {
                 self.flag = "start";
@@ -212,9 +267,13 @@ var webHandle = {
                     self.$progressText.text("100%");
                     setTimeout(function() {
                         self.$dom.hide().remove();
-                        webHandle.video.$box.css({
-                            "opacity": 1
-                        });
+                        if (!webHandle.skip) {
+                            webHandle.video.$box.css({
+                                "opacity": 1
+                            });
+                        } else {
+                            webHandle.video.event.end();
+                        }
                     }, 1000);
                 }, 5000);
             }
@@ -239,12 +298,18 @@ var webHandle = {
     init() {
         let self = this;
         self.load.init();
+        self.pixiAni.init();
         // if (isAndroid || (isiOS && !isWeixinBrowser)) {
         //     $("#videoClick").show();
         // }
-        $("#videoClick").show();
-        self.video.init();
-        self.pixiAni.init();
+        let urlHASH = window.location.hash;
+        console.log(typeof window.location.hash);
+        if (urlHASH === "#played") {
+            self.skip = true;
+        } else {
+            $("#videoClick").show();
+            self.video.init();
+        }
     }
 };
 webHandle.init();

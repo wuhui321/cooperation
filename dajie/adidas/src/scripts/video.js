@@ -143,11 +143,13 @@ var webHandle = {
                 // webHandle.pixiAni.start();
                 setTimeout(function() {
                     $("#adidasLogo, #pageText3").show();
-                }, 300);
-                $("#adidasLogo").on("webkitAnimationEnd", function() {
                     $("#pageText3").show();
                     webHandle.pixiAni.start();
-                });
+                }, 300);
+                // $("#adidasLogo").on("webkitAnimationEnd", function() {
+                //     $("#pageText3").show();
+                //     webHandle.pixiAni.start();
+                // });
             }
         },
         setVideoSize: function() {

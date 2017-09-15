@@ -3,10 +3,10 @@ jQuery(document).ready(function() {
     //页面中引入<script src="http://special.dajie.com/html/djappshare/dajieWebViewBridge.js"></script>
     //再把当前文件引入 <script type="text/javascript" src="sharewx.js"></script>
 
-    var descContent = "阿迪达斯2018校园招聘正式开启，精彩mv带你领略阿迪freestyle"; // 微信分享描述
-    var shareTitle = '阿迪达斯2018校园招聘'; // 微信分享标题
+    var descContent = "网申系统9月15日上线，精彩MV带你领略阿迪freestyle"; // 微信分享描述
+    var shareTitle = '阿迪达斯2018校园招聘正式启动，打破界限，等你来!'; // 微信分享标题
     // 微信分享图片
-    var imgUrl = 'https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1505369948202/share.jpg'; //图片路径
+    var imgUrl = 'https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1505460920145/share.jpg'; //图片路径
 
     if (imgUrl.indexOf(window.location.protocol) < 0) {
         if (imgUrl[0] == '.') {

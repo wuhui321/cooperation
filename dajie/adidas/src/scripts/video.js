@@ -3,7 +3,7 @@ require("../css/animate.css");
 require("../less/adidasAni.less");
 require("../less/style.less");
 require("pixi.js");
-// require("./lib/sharewx.js");
+require("./lib/sharewx.js");
 var frame_start = [];
 var frame_loop = [
     require("../assets/images/content/frame/loop/p0.jpg"),

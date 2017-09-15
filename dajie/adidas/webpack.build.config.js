@@ -9,9 +9,9 @@ module.exports = {
         video: path.resolve(__dirname, './src/scripts/video.js')
     },
     output: {
-        filename: '[name].bundle.js',
+        filename: './js/[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
-        publicPath: 'https://t1toptest.yidianzixun.com/cooperation/dajie/adidas' + (+new Date()) + '/'
+        publicPath: 'https://t1toptest.yidianzixun.com/cooperation/dajie/adidas_v1.0.0/'
     },
     module: {
         rules: [{

@@ -3,7 +3,7 @@ require("../css/animate.css");
 require("../less/adidasAni.less");
 require("../less/style.less");
 require("pixi.js");
-require("./lib/sharewx.js");
+// require("./lib/sharewx.js");
 var frame_start = [];
 var frame_loop = [
     require("../assets/images/content/frame/loop/p0.jpg"),
@@ -140,10 +140,10 @@ var webHandle = {
                 aniApp = self.aniApp;
 
 
-            // frame_start.forEach(function(item) {
-            //     var tmp = PIXI.Texture.fromImage(item);
-            //     self.startTexture.push(tmp);
-            // });
+            frame_start.forEach(function(item) {
+                var tmp = PIXI.Texture.fromImage(item);
+                self.startTexture.push(tmp);
+            });
             frame_loop.forEach(function(item) {
                 var tmp = PIXI.Texture.fromImage(item);
                 self.loopTexture.push(tmp);
@@ -154,8 +154,8 @@ var webHandle = {
             setInterval(function() {
                 if (self.flag && self.flag === 'start') {
                     if (self.imgCount < frame_start.length - 1) {
-                        // self.aniSprite.texture = self.startTexture[self.imgCount];
-                        self.aniSprite.texture = PIXI.Texture.fromImage(frame_start[self.imgCount]);
+                        self.aniSprite.texture = self.startTexture[self.imgCount];
+                        // self.aniSprite.texture = PIXI.Texture.fromImage(frame_start[self.imgCount]);
                         console.log(self.imgCount);
                         if (self.imgCount === 35) {
                             $("#adidasLogo, #pageText3").show();

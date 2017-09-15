@@ -9,7 +9,7 @@ var frame_loop = [
     require("../assets/images/content/frame/loop/p0.jpg"),
     require("../assets/images/content/frame/loop/p1.jpg")
 ];
-for (var i = 0; i < 48; i++) {
+for (var i = 0; i < 49; i++) {
     frame_start.push(require("../assets/images/content/frame/start/x" + i + ".jpg"));
 }
 var LOAD_IMG = [
@@ -56,6 +56,7 @@ var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
 var isWeixinBrowser = (/micromessenger/i).test(navigator.userAgent);
 var webHandle = {
     skip: false,
+    $audioPlayer: null,
     monitor: {
         MT: function() {
             var s = new Image();
@@ -160,12 +161,20 @@ var webHandle = {
             });
         },
         init: function() {
-            let self = this;
+            let self = this,
+                audioFlag = false;
             self.$box = $("#videoPage");
             self.player = $("#videoPlayer").get(0);
             self.setVideoSize();
+            webHandle.$audioPlayer = $("#audioPlayer")[0];
 
             $("#videoClick").one('touchend', function() {
+                if (!audioFlag) {
+                    webHandle.$audioPlayer.play();
+                    webHandle.$audioPlayer.pause();
+                } else {
+                    audioFlag = true;
+                }
                 $(this).hide();
                 $(".skip-btn").show();
                 setTimeout(function() {
@@ -174,6 +183,12 @@ var webHandle = {
             });
             $(".skip-btn").one('touchend', function(e) {
                 e.stopPropagation();
+                if (!audioFlag) {
+                    webHandle.$audioPlayer.play();
+                    webHandle.$audioPlayer.pause();
+                } else {
+                    audioFlag = true;
+                }
                 self.event.end();
             });
             // document.addEventListener("WeixinJSBridgeReady", function() {
@@ -212,9 +227,14 @@ var webHandle = {
                     if (self.imgCount < frame_start.length - 1) {
                         self.aniSprite.texture = self.startTexture[self.imgCount];
                         // self.aniSprite.texture = PIXI.Texture.fromImage(frame_start[self.imgCount]);
-                        // if (self.imgCount === 35) {
-                        //     $("#adidasLogo, #pageText3").show();
-                        // }
+                        if (self.imgCount === 35) {
+                            // $("#adidasLogo, #pageText3").show();
+                            try {
+                                webHandle.$audioPlayer.play();
+                            } catch (error) {
+                                console.log(error);
+                            }
+                        }
                         self.imgCount++;
                     } else {
                         self.imgCount = 0;

@@ -9,9 +9,9 @@ module.exports = {
         video: path.resolve(__dirname, './src/scripts/video.js')
     },
     output: {
-        filename: './js/[name].bundle.js',
+        filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
-        publicPath: 'https://t1toptest.yidianzixun.com/cooperation/dajie/adidas_v1.0.0/'
+        // publicPath: 'https://t1toptest.yidianzixun.com/cooperation/dajie/adidas_v1.0.0/'
     },
     module: {
         rules: [{
@@ -69,7 +69,7 @@ module.exports = {
                 minifyJS: true
             }
         }),
-        new extractTextPlugin("./css/[name].styles.css"),
+        new extractTextPlugin("[name].styles.css"),
         new webpack.ProvidePlugin({
             $: "jquery",
             jQuery: "jquery",

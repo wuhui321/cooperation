@@ -59,23 +59,25 @@ var webHandle = {
     $audioPlayer: null,
     monitor: {
         MT: function() {
-            var s = new Image();
+            var s = new Image(),
+                target = "https://company.dajie.com/nb/vsite/adidas_2018/index.html";
             s.src = "https://track.dajie.com/CfHQssljRgT7M";
             s.onload = function() {
-                window.location.href = "https://company.dajie.com/nb/vsite/adidas_2018/manage.html?id=2";
+                window.location.href = target;
             }
             setTimeout(function() {
-                window.location.href = "https://company.dajie.com/nb/vsite/adidas_2018/manage.html?id=2";
+                window.location.href = target;
             }, 300);
         },
         register: function() {
-            var s = new Image();
+            var s = new Image(),
+                target = "https://company.dajie.com/nb/vsite/adidas_2018/enroll.html";
             s.src = "https://track.dajie.com/CTws1xZ7fPInZ";
             s.onload = function() {
-                window.location.href = "https://company.dajie.com/nb/vsite/adidas_2018/enroll.html";
+                window.location.href = target;
             }
             setTimeout(function() {
-                window.location.href = "https://company.dajie.com/nb/vsite/adidas_2018/enroll.html";
+                window.location.href = target;
             }, 300);
         }
     },

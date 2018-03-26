@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!--手机号码不被显示为拨号链接-->
+    <meta name="format-detection" content="telephone=no">
+    <!-- 浏览器全屏显示-->
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+
+    <!-- QQ分享-->
+    <meta itemprop="name" content="<%= htmlWebpackPlugin.options.shareTitle %>">
+    <meta itemprop="description" content="<%= htmlWebpackPlugin.options.shareDesc %>">
+    <meta itemprop="image" content="<%= htmlWebpackPlugin.options.shareImg %>">
+
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+</head>
+
+<body>
+    <section id="loadingBox" class="loading-box">
+        <div class="logo-box">
+            <div class="adidas"></div>
+            <div class="dajie"></div>
+        </div>
+        <div class="shoes-box shoesAni"></div>
+        <div id="progressText" class="progress-text">0%</div>
+    </section>
+    <audio id="audioPlayer" src="//ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1505453119073/brick.mp3" class="audio-player"></audio>
+    <section id="videoPage" class="video-page">
+        <div id="videoBox" class="video-box">
+            <video id="videoPlayer" width="480" height="852" poster="//ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1505200196927/poster.jpg" src="//ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1505441151861/video.mp4"
+                x5-video-player-fullscreen="true" x5-video-player-type="h5" webkit-playsinline="" playsinline=""></video>
+            <div class="skip-btn"></div>
+        </div>
+        <div id="videoClick" class="click-message-box" style="display:none;">
+            <div class="skip-btn" style="display:none;"></div>
+            <div class="hand-box animated infinite handAni">
+                <div class="hand"></div>
+            </div>
+        </div>
+    </section>
+    <section class="content-box">
+        <div id="animationBox" class="element-box animation-box">
+            <div id="brick" class="element-box brick-box">
+                <div id="brickOpen" class="element-box animated fadeIn brick-open"></div>
+            </div>
+            <div id="adidasLogo" class="element-box animated fadeIn adidas-logo" style="display:none;"></div>
+            <div id="pageText3" class="element-box text3" style="display: none;">
+                <a id="MT_Btn" href="javascript:void(0);" class="element-box text1-url"></a>
+                <a id="registBtn" href="javascript:void(0);" class="element-box text2-url"></a>
+                <button id="shareHintBtn" class="element-box share-hint-btn"></button>
+            </div>
+        </div>
+        <!-- <div class="audio-box audio-open-icon"></div> -->
+        <div id="shareHintPage" class="element-box share-hint-page" style="display:none;">
+            <div class="element-box picture"></div>
+            <button id="closeHintBtn" class="close-btn"></button>
+        </div>
+    </section>
+    <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="//special.dajie.com/html/djappshare/dajieWebViewBridge.js"></script>
+</body>
+
+</html>

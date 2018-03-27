@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!--手机号码不被显示为拨号链接-->
+    <meta name="format-detection" content="telephone=no">
+    <!-- 浏览器全屏显示-->
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+
+    <!-- QQ分享-->
+    <meta itemprop="name" content="<%= htmlWebpackPlugin.options.shareTitle %>">
+    <meta itemprop="description" content="<%= htmlWebpackPlugin.options.shareDesc %>">
+    <meta itemprop="image" content="<%= htmlWebpackPlugin.options.shareImg %>">
+
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+</head>
+
+<body>
+    <section id="loadingBox" class="loading-box">
+        <div id="fountainG">
+            <div id="fountainG_1" class="fountainG"></div>
+            <div id="fountainG_2" class="fountainG"></div>
+            <div id="fountainG_3" class="fountainG"></div>
+            <div id="fountainG_4" class="fountainG"></div>
+            <div id="fountainG_5" class="fountainG"></div>
+            <div id="fountainG_6" class="fountainG"></div>
+            <div id="fountainG_7" class="fountainG"></div>
+            <div id="fountainG_8" class="fountainG"></div>
+        </div>
+    </section>
+    <div class="swiper-container box">
+        <div class="swiper-wrapper box">
+            <div class="swiper-slide stop-swiping box page-1">
+                <div class="box logo"></div>
+                <div class="box title"></div>
+                <div class="box bowl"></div>
+                <div class="box baby-box">
+                    <div class="box baby"></div>
+                    <div class="box glass"></div>
+                    <div class="box hint"></div>
+                </div>
+                <div class="box star-box">
+                    <div class="box star-1"></div>
+                    <div class="box star-2"></div>
+                </div>
+            </div>
+            <div class="swiper-slide stop-swiping box page-2">Slide 2</div>
+            <div class="swiper-slide stop-swiping box page-3">
+                <div class="box logo"></div>
+                <div class="box bowl"></div>
+                <div class="box step-1">
+                    <div class="box text-1"></div>
+                    <div class="box fruits"></div>
+                </div>
+                <div class="box step-2 hide">
+                    <div class="box text-2-1"></div>
+                    <div class="box text-2-2"></div>
+                    <div class="box btn"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</body>
+
+</html>

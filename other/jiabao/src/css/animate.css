@@ -20,6 +20,16 @@
     animation-iteration-count: infinite;
 }
 
+.animated.timing {
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+}
+
+.animated.fillMode {
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
 .animated.hinge {
     -webkit-animation-duration: 2s;
     animation-duration: 2s;

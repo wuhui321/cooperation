@@ -47,6 +47,8 @@ body {
         background-position: center;
     }
     .baby-box{
+        -webkit-animation-delay: .5s;
+        animation-delay: .5s;
         .baby{
             background-image: url("../assets/images/page1/baby.png");
             background-repeat: no-repeat;
@@ -58,6 +60,8 @@ body {
             background-repeat: no-repeat;
             background-size: auto 100%;
             background-position: center;
+            -webkit-animation-direction: alternate;
+            animation-direction: alternate;
         }
         .hint{
             background-image: url("../assets/images/page1/hint.png");
@@ -72,12 +76,29 @@ body {
             background-repeat: no-repeat;
             background-size: auto 100%;
             background-position: center;
+            -webkit-animation-direction: alternate;
+            animation-direction: alternate;
         }
         .star-2{
             background-image: url("../assets/images/page1/star-2.png");
             background-repeat: no-repeat;
             background-size: auto 100%;
             background-position: center;
+
+            // -webkit-animation-delay: .5s;
+            // animation-delay: .5s;
+
+            -webkit-animation-direction: alternate;
+            animation-direction: alternate;
         }
+    }
+    .next-page-btn{
+        width: 31%;
+        height: 18%;
+        outline: none;
+        border: none;
+        left: 26%;
+        top: 62%;
+        background: transparent;
     }
 }

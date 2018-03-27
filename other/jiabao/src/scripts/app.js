@@ -4,7 +4,7 @@ require("../less/loading.less");
 require("../css/animate.css");
 require("../less/style.less");
 require("../less/page-3.less");
-require("../scripts/lib/swiper-4.2.0.min");
+const Swiper = require("../scripts/lib/swiper-4.2.0.min");
 // require("pixi.js");
 // var frame_start = [];
 // for (var i = 0; i < 49; i++) {
@@ -58,7 +58,13 @@ webHandle = {
     },
     swiper: {
         swiperObj: null,
+        event() {
+            $("#pageOneBtn").on("click", () => {
+                this.swiperObj.slideNext(0);
+            });
+        },
         init() {
+            let self = this;
             this.swiperObj = new Swiper(".swiper-container", {
                 direction: 'vertical',
                 effect: 'fade',
@@ -66,7 +72,12 @@ webHandle = {
                     crossFade: false,
                 },
                 noSwiping: true,
-                noSwipingClass: 'stop-swiping'
+                noSwipingClass: 'stop-swiping',
+                on: {
+                    init() {
+                        self.event();
+                    }
+                }
             });
         }
     },

@@ -3,33 +3,72 @@
     z-index: 10;
     .arWrapper{
         overflow: scroll;
-        .video-img{
-            height: 105%;
+        touch-action: manipulation !important;
+        .image-box{
+            height: 100%;
+            position: relative;
+            .video-img{
+                height: 105%;
+            }
+            .point-1{
+                height: 105%;
+                width: auto;
+                left: 130%;
+                img{
+                    height: 100%;
+                }
+            }
+            .point-2{
+                height: 105%;
+                width: auto;
+                left: 73%;
+                img{
+                    height: 100%;
+                }
+            }
+            .point-3{
+                height: 105%;
+                width: auto;
+                left: 318%;
+                img{
+                    height: 100%;
+                }
+            }
         }
     }
-    .btn-common{
-        width: 30px;
-        height: 30px;
-        outline: none;
-        background: transparent;
-        border: none;
-        top: 78%;
+    .logo{
+        height: 25%;
     }
-    .left-btn{
-        background-image: url("../assets/images/page2/left-btn.png");
-        background-size: 100%;
+    .text{
+        background-image: url("../assets/images/page2/text.png");
         background-repeat: no-repeat;
+        background-size: 100% auto;
         background-position: center;
-        position: absolute;
-        left: 5%;
     }
-    .right-btn{
-        background-image: url("../assets/images/page2/right-btn.png");
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: center;
-        position: absolute;
-        right: 5%;
-        left: auto;
-    }
+}
+.btn-common{
+    width: 40px;
+    height: 40px;
+    outline: none;
+    background: transparent;
+    border: none;
+    top: 78%;
+    z-index: 20;
+}
+.left-btn{
+    background-image: url("../assets/images/page2/left-btn.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    left: 5%;
+}
+.right-btn{
+    background-image: url("../assets/images/page2/right-btn.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    right: 5%;
+    left: auto;
 }

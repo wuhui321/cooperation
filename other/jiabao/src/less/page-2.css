@@ -4,19 +4,58 @@
 }
 .page-2 .arWrapper {
   overflow: scroll;
+  touch-action: manipulation !important;
 }
-.page-2 .arWrapper .video-img {
+.page-2 .arWrapper .image-box {
+  height: 100%;
+  position: relative;
+}
+.page-2 .arWrapper .image-box .video-img {
   height: 105%;
 }
-.page-2 .btn-common {
-  width: 30px;
-  height: 30px;
+.page-2 .arWrapper .image-box .point-1 {
+  height: 105%;
+  width: auto;
+  left: 130%;
+}
+.page-2 .arWrapper .image-box .point-1 img {
+  height: 100%;
+}
+.page-2 .arWrapper .image-box .point-2 {
+  height: 105%;
+  width: auto;
+  left: 73%;
+}
+.page-2 .arWrapper .image-box .point-2 img {
+  height: 100%;
+}
+.page-2 .arWrapper .image-box .point-3 {
+  height: 105%;
+  width: auto;
+  left: 318%;
+}
+.page-2 .arWrapper .image-box .point-3 img {
+  height: 100%;
+}
+.page-2 .logo {
+  height: 25%;
+}
+.page-2 .text {
+  background-image: url("../assets/images/page2/text.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+}
+.btn-common {
+  width: 40px;
+  height: 40px;
   outline: none;
   background: transparent;
   border: none;
   top: 78%;
+  z-index: 20;
 }
-.page-2 .left-btn {
+.left-btn {
   background-image: url("../assets/images/page2/left-btn.png");
   background-size: 100%;
   background-repeat: no-repeat;
@@ -24,7 +63,7 @@
   position: absolute;
   left: 5%;
 }
-.page-2 .right-btn {
+.right-btn {
   background-image: url("../assets/images/page2/right-btn.png");
   background-size: 100%;
   background-repeat: no-repeat;

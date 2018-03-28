@@ -23,7 +23,21 @@ const LOAD_IMG = [
     require("../assets/images/page1/title.png"),
     require("../assets/images/page1/logo.png"),
     require("../assets/images/page2/left-btn.png"),
-    require("../assets/images/page2/right-btn.png")
+    require("../assets/images/page2/right-btn.png"),
+    require("../assets/images/page2/back-btn.png"),
+    require("../assets/images/page2/next-btn.png"),
+    require("../assets/images/page2/point-1-bg.jpg"),
+    require("../assets/images/page2/point-1-text-1.png"),
+    require("../assets/images/page2/point-1-text-2.png"),
+    require("../assets/images/page2/point-1.png"),
+    require("../assets/images/page2/point-2-bg.jpg"),
+    require("../assets/images/page2/point-2-text-1.png"),
+    require("../assets/images/page2/point-2-text-2.png"),
+    require("../assets/images/page2/point-2.png"),
+    require("../assets/images/page2/point-3-bg.jpg"),
+    require("../assets/images/page2/point-3-text.png"),
+    require("../assets/images/page2/point-3.png"),
+    require("../assets/images/page2/text.png")
 ];
 // LOAD_IMG = LOAD_IMG.concat(frame_start);
 
@@ -64,7 +78,8 @@ webHandle = {
         swiperObj: null,
         event() {
             $("#pageOneBtn").on("click", () => {
-                this.swiperObj.slideTo(1, 0);
+                // this.swiperObj.slideTo(1, 0);
+                webHandle.page2.show();
             });
         },
         init() {
@@ -96,16 +111,30 @@ webHandle = {
     },
     page2: {
         scrollObj: null,
+        show() {
+            $("#page2, #leftBtn, #rightBtn").removeClass("hide");
+            this.init();
+        },
         init() {
-            this.scrollObj = new IScroll("#arWrapper");
-            $("#leftBtn").on("click", () => {
+            this.scrollObj = new IScroll("#arWrapper", {
+                fixedScrollbar: true,
+                bounce: false
+            });
+            $("#leftBtn").on("touchstart", () => {
                 console.log('left');
-                this.scrollObj.scrollBy(-10, 0);
+                this.scrollObj.scrollBy(-1, 0);
             });
-            $("#rightBtn").on("click", () => {
+            $("#rightBtn").on("touchstart", () => {
                 console.log('right');
-                this.scrollObj.scrollBy(10, 0);
+                this.scrollObj.scrollBy(1, 0);
             });
+            $("#page2Text").removeClass("hide");
+            setTimeout(() => {
+                $("#page2Text").addClass("animated fillMode fadeOut").on("webkitAnimationEnd", () => {
+                    console.log("end");
+                    $("#page2Text").hide().remove();
+                });
+            }, 3000);
         }
     },
     init() {
@@ -116,7 +145,7 @@ webHandle = {
             this.swiper.init();
         });
 
-        this.page2.init();
+        // this.page2.init();
     }
 };
 

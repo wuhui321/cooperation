@@ -1,0 +1,35 @@
+.page-2 {
+  background-color: #0082b8;
+  z-index: 10;
+}
+.page-2 .arWrapper {
+  overflow: scroll;
+}
+.page-2 .arWrapper .video-img {
+  height: 105%;
+}
+.page-2 .btn-common {
+  width: 30px;
+  height: 30px;
+  outline: none;
+  background: transparent;
+  border: none;
+  top: 78%;
+}
+.page-2 .left-btn {
+  background-image: url("../assets/images/page2/left-btn.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  left: 5%;
+}
+.page-2 .right-btn {
+  background-image: url("../assets/images/page2/right-btn.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  right: 5%;
+  left: auto;
+}

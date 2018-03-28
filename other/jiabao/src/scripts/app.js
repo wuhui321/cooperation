@@ -1,10 +1,12 @@
 require("../css/swiper-4.2.0.min.css");
 require("../css/reset.css");
-require("../less/loading.less");
 require("../css/animate.css");
+require("../less/loading.less");
 require("../less/style.less");
+require("../less/page-2.less");
 require("../less/page-3.less");
 const Swiper = require("../scripts/lib/swiper-4.2.0.min");
+const IScroll = require("../scripts/lib/iscroll");
 // require("pixi.js");
 // var frame_start = [];
 // for (var i = 0; i < 49; i++) {
@@ -19,7 +21,9 @@ const LOAD_IMG = [
     require("../assets/images/page1/star-1.png"),
     require("../assets/images/page1/star-2.png"),
     require("../assets/images/page1/title.png"),
-    require("../assets/images/page1/logo.png")
+    require("../assets/images/page1/logo.png"),
+    require("../assets/images/page2/left-btn.png"),
+    require("../assets/images/page2/right-btn.png")
 ];
 // LOAD_IMG = LOAD_IMG.concat(frame_start);
 
@@ -60,7 +64,7 @@ webHandle = {
         swiperObj: null,
         event() {
             $("#pageOneBtn").on("click", () => {
-                this.swiperObj.slideNext(0);
+                this.swiperObj.slideTo(1, 0);
             });
         },
         init() {
@@ -76,8 +80,31 @@ webHandle = {
                 on: {
                     init() {
                         self.event();
+                    },
+                    slideChangeTransitionEnd() {
+                        switch (this.activeIndex) {
+                            case 0:
+                                break;
+                            case 1:
+                                $("#text1").removeClass("hide");
+                                break;
+                        }
                     }
                 }
+            });
+        }
+    },
+    page2: {
+        scrollObj: null,
+        init() {
+            this.scrollObj = new IScroll("#arWrapper");
+            $("#leftBtn").on("click", () => {
+                console.log('left');
+                this.scrollObj.scrollBy(-10, 0);
+            });
+            $("#rightBtn").on("click", () => {
+                console.log('right');
+                this.scrollObj.scrollBy(10, 0);
             });
         }
     },
@@ -88,6 +115,8 @@ webHandle = {
             $("#loadingBox").hide().remove();
             this.swiper.init();
         });
+
+        this.page2.init();
     }
 };
 

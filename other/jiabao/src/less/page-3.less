@@ -1,7 +1,7 @@
 .page-3{
     background-image: url("../assets/images/page3/bg.jpg");
     background-repeat: no-repeat;
-    background-size: 100% auto;
+    background-size: auto 100%;
     background-position: center;
     .bowl{
         background-image: url("../assets/images/page1/bowl.png");
@@ -17,10 +17,9 @@
             background-position: center;
         }
         .fruits{
-            background-image: url("../assets/images/page3/fruits.png");
-            background-repeat: no-repeat;
-            background-size: auto 100%;
-            background-position: center;
+            canvas{
+                height: 100%;
+            }
         }
     }
     .step-2{
@@ -36,11 +35,24 @@
             background-size: auto 100%;
             background-position: center;
         }
-        .btn{
+        .btn-img{
             background-image: url("../assets/images/page3/btn.png");
             background-repeat: no-repeat;
             background-size: auto 100%;
             background-position: center;
+
+            -webkit-transform-origin: center 85%;
+            transform-origin: center 85%;
+        }
+        .link-btn{
+            border: none;
+            outline: none;
+            background: transparent;
+            position: absolute;
+            left: 19%;
+            top: 79%;
+            width: 62%;
+            height: 13%;    
         }
     }
 }

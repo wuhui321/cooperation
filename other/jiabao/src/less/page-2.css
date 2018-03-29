@@ -45,8 +45,10 @@
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center;
+  -webkit-animation-delay: 5s;
+  animation-delay: 5s;
 }
-.btn-common {
+.page-2 .btn-common {
   width: 40px;
   height: 40px;
   outline: none;
@@ -54,8 +56,10 @@
   border: none;
   top: 78%;
   z-index: 20;
+  -webkit-animation-iteration-count: 3;
+  animation-iteration-count: 3;
 }
-.left-btn {
+.page-2 .left-btn {
   background-image: url("../assets/images/page2/left-btn.png");
   background-size: 100%;
   background-repeat: no-repeat;
@@ -63,7 +67,7 @@
   position: absolute;
   left: 5%;
 }
-.right-btn {
+.page-2 .right-btn {
   background-image: url("../assets/images/page2/right-btn.png");
   background-size: 100%;
   background-repeat: no-repeat;
@@ -71,4 +75,77 @@
   position: absolute;
   right: 5%;
   left: auto;
+}
+.point-box {
+  z-index: 10;
+}
+.point-box .point-1-box {
+  background-image: url("../assets/images/page2/point-1-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+}
+.point-box .point-1-box .text-1 {
+  background-image: url("../assets/images/page2/point-1-text-1.png");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+}
+.point-box .point-1-box .text-2 {
+  background-image: url("../assets/images/page2/point-1-text-2.png");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
+}
+.point-box .point-2-box {
+  background-image: url("../assets/images/page2/point-2-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+}
+.point-box .point-2-box .text-1 {
+  background-image: url("../assets/images/page2/point-2-text-1.png");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+}
+.point-box .point-2-box .text-2 {
+  background-image: url("../assets/images/page2/point-2-text-2.png");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
+}
+.point-box .point-3-box {
+  background-image: url("../assets/images/page2/point-3-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+}
+.point-box .point-3-box .text {
+  background-image: url("../assets/images/page2/point-3-text.png");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+}
+.point-box .back-btn {
+  border: none;
+  outline: none;
+  width: 165px;
+  height: 35px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  background: transparent;
+  background-image: url("../assets/images/page2/back-btn.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
 }

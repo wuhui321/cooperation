@@ -7,11 +7,13 @@ require("../less/page-2.less");
 require("../less/page-3.less");
 const Swiper = require("../scripts/lib/swiper-4.2.0.min");
 const IScroll = require("../scripts/lib/iscroll");
-// require("pixi.js");
-// var frame_start = [];
-// for (var i = 0; i < 49; i++) {
-//     frame_start.push(require("../assets/images/content/frame/start/x" + i + ".jpg"));
-// }
+require("pixi.js");
+
+var FRAME_IMG = [];
+for (var i = 0; i < 38; i++) {
+    FRAME_IMG.push(require("../assets/images/fruits/img" + i + ".png"));
+}
+
 const LOAD_IMG = [
     require("../assets/images/page1/baby.png"),
     require("../assets/images/page1/bg.jpg"),
@@ -45,7 +47,8 @@ var u = navigator.userAgent,
     isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1,
     isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
     isWeixinBrowser = (/micromessenger/i).test(navigator.userAgent),
-    webHandle;
+    webHandle,
+    minX;;
 
 webHandle = {
     load: {
@@ -54,6 +57,7 @@ webHandle = {
             if (!Array.isArray(imgList)) {
                 return;
             }
+            this.loadNum = 0;
             let s,
                 self = this;
             for (let i = 0; i < imgList.length; i++) {
@@ -76,12 +80,6 @@ webHandle = {
     },
     swiper: {
         swiperObj: null,
-        event() {
-            $("#pageOneBtn").on("click", () => {
-                // this.swiperObj.slideTo(1, 0);
-                webHandle.page2.show();
-            });
-        },
         init() {
             let self = this;
             this.swiperObj = new Swiper(".swiper-container", {
@@ -93,15 +91,19 @@ webHandle = {
                 noSwiping: true,
                 noSwipingClass: 'stop-swiping',
                 on: {
-                    init() {
-                        self.event();
-                    },
                     slideChangeTransitionEnd() {
                         switch (this.activeIndex) {
                             case 0:
                                 break;
                             case 1:
                                 $("#text1").removeClass("hide");
+                                // $("#linkBtn").one("click", (e) => {
+                                //     e.stopPropagation();
+                                //     _czc.push(["_trackEvent", "用户", "分享"]);
+                                //     setTimeout(() => {
+                                //         window.open("http://wx2.ismartgo.com/wxgame/game/gerberapr1173/shakeAndRemind.do");
+                                //     }, 500);
+                                // });
                                 break;
                         }
                     }
@@ -111,41 +113,142 @@ webHandle = {
     },
     page2: {
         scrollObj: null,
+        curPoint: 1,
         show() {
-            $("#page2, #leftBtn, #rightBtn").removeClass("hide");
+            let self = this;
             this.init();
+            $("#page2, #leftBtn, #rightBtn").removeClass("hide");
+            // $("#leftBtn").on("click", (e) => {
+            //     e.stopPropagation();
+            //     console.log('left');
+            //     this.scrollObj.scrollBy(5, 0);
+            // });
+
+            // $("#rightBtn").on("click", (e) => {
+            //     e.stopPropagation();
+            //     console.log('right');
+            //     this.scrollObj.scrollBy(-5, 0);
+            // });
+
+            $("#leftBtn, #rightBtn").on("webkitAnimationEnd", function() {
+                $(this).addClass("hide");
+            });
+
+            $("#point1, #point2, #point3").one("click", function(e) {
+                e.stopPropagation();
+
+                $("#pointBox").removeClass("hide");
+                $("#arWrapper").addClass("animated timing zoomOutBig");
+                $(".point-" + self.curPoint + "-box").removeClass("hide");
+                $(this).hide().remove();
+
+                if (self.curPoint >= 3) {
+                    webHandle.swiper.swiperObj.slideNext();
+                }
+            });
+
+            $("#backBtn").on("click", () => {
+                if (self.curPoint >= 3) {
+                    $("#page2").addClass("hide");
+                    $(".step-1").removeClass("hide");
+
+                    webHandle.pixiAni.start();
+                }
+                $("#point" + (self.curPoint + 1)).removeClass("hide");
+                $("#arWrapper").removeClass(" animated timing zoomOutBig");
+                $("#pointBox").addClass("hide");
+                self.curPoint++;
+
+            });
+        },
+        loadFruitsImg() {
+            webHandle.load.start(FRAME_IMG, () => {
+                webHandle.pixiAni.init();
+            });
         },
         init() {
             this.scrollObj = new IScroll("#arWrapper", {
                 fixedScrollbar: true,
                 bounce: false
             });
-            $("#leftBtn").on("touchstart", () => {
-                console.log('left');
-                this.scrollObj.scrollBy(-1, 0);
-            });
-            $("#rightBtn").on("touchstart", () => {
-                console.log('right');
-                this.scrollObj.scrollBy(1, 0);
-            });
+            this.scrollObj.scrollTo(-400, 0);
+            // this.scrollObj.on('scrollStart', function() {
+            //     minX = this.x; // console.log(this);
+            // });
+            // this.scrollObj.on('scroll', function() {
+            //     minX = minX < this.x ? minX : this.x; // console.log(this);
+            // });
+            // this.scrollObj.on('scrollEnd', function() {
+            //     minX = minX < this.x ? minX : this.x; //
+            //     if (this.x - minX > 10 && (this.directionX === 1)) { //加载
+            //     }
+            // });
             $("#page2Text").removeClass("hide");
+            $("#page2Text").addClass("animated fillMode fadeOut").on("webkitAnimationEnd", () => {
+                $("#page2Text").hide().remove();
+            });
+
+            this.loadFruitsImg();
+        }
+    },
+    pixiAni: {
+        $DOM: null,
+        aniApp: null,
+        startTexture: [],
+        loopTexture: [],
+        flag: null,
+        imgCount: 0,
+        aniSprite: null,
+        start() {
+            var self = this,
+                aniApp = self.aniApp;
+
+            FRAME_IMG.forEach(function(item) {
+                var tmp = PIXI.Texture.fromImage(item);
+                self.startTexture.push(tmp);
+            });
+
+            self.aniSprite = new PIXI.Sprite(self.startTexture[0]);
+            aniApp.stage.addChild(self.aniSprite);
+            aniApp.renderer.render(self.aniSprite);
+            setInterval(function() {
+                if (self.flag && self.flag === 'start') {
+                    if (self.imgCount < FRAME_IMG.length - 1) {
+                        self.aniSprite.texture = self.startTexture[self.imgCount];
+                        console.log(self.imgCount);
+                        self.imgCount++;
+                    } else {
+                        self.imgCount = 0;
+                        self.flag = "end";
+
+                        $(".step-1").addClass("hide").remove();
+                        $(".step-2").removeClass("hide");
+                    }
+                }
+            }, 60);
             setTimeout(() => {
-                $("#page2Text").addClass("animated fillMode fadeOut").on("webkitAnimationEnd", () => {
-                    console.log("end");
-                    $("#page2Text").hide().remove();
-                });
-            }, 3000);
+                this.flag = "start";
+            }, 300);
+        },
+        init() {
+            var self = this,
+                $DOM,
+                aniApp;
+            $DOM = self.$DOM = $("#fruits");
+            aniApp = self.aniApp = new PIXI.Application(640, 1008, { transparent: true, antialias: true });
+            $DOM.html(aniApp.view);
         }
     },
     init() {
-        this.load.loadNum = LOAD_IMG.length;
-
         this.load.start(LOAD_IMG, () => {
             $("#loadingBox").hide().remove();
             this.swiper.init();
         });
 
-        // this.page2.init();
+        $("#pageOneBtn").one("click", (e) => {
+            e.stopPropagation();
+            webHandle.page2.show();
+        });
     }
 };
 

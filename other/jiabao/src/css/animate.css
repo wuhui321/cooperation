@@ -1477,6 +1477,49 @@
     animation-name: fadeInUpSmall;
 }
 
+@-webkit-keyframes fadeInOut {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 30px, 0);
+        transform: translate3d(0, 30px, 0);
+    }
+    30%,
+    70% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+    to {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 30px, 0);
+        transform: translate3d(0, 30px, 0);
+    }
+}
+
+@keyframes fadeInOut {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 30px, 0);
+        transform: translate3d(0, 30px, 0);
+    }
+    30%,
+    70% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+    to {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 30px, 0);
+        transform: translate3d(0, 30px, 0);
+    }
+}
+
+.fadeInOut {
+    -webkit-animation-name: fadeInOut;
+    animation-name: fadeInOut;
+}
+
 @-webkit-keyframes fadeInUpBig {
     from {
         opacity: 0;
@@ -2646,6 +2689,33 @@
     animation-name: zoomIn;
 }
 
+@-webkit-keyframes zoomInBig {
+    from {
+        opacity: 1;
+        -webkit-transform: scale3d(1.3, 1.3, 1.3);
+        transform: scale3d(1.3, 1.3, 1.3);
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomInBig {
+    from {
+        opacity: 1;
+        -webkit-transform: scale3d(1.3, 1.3, 1.3);
+        transform: scale3d(1.3, 1.3, 1.3);
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.zoomInBig {
+    -webkit-animation-name: zoomInBig;
+    animation-name: zoomInBig;
+}
+
 @-webkit-keyframes zoomInDown {
     from {
         opacity: 0;
@@ -2833,6 +2903,33 @@
 .zoomOut {
     -webkit-animation-name: zoomOut;
     animation-name: zoomOut;
+}
+
+@-webkit-keyframes zoomOutBig {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale3d(2.3, 2.3, 2.3);
+        transform: scale3d(2.3, 2.3, 2.3);
+    }
+}
+
+@keyframes zoomOutBig {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale3d(2.3, 2.3, 2.3);
+        transform: scale3d(2.3, 2.3, 2.3);
+    }
+}
+
+.zoomOutBig {
+    -webkit-animation-name: zoomOutBig;
+    animation-name: zoomOutBig;
 }
 
 @-webkit-keyframes zoomOutDown {

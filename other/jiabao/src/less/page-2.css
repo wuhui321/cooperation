@@ -4,7 +4,6 @@
 }
 .page-2 .arWrapper {
   overflow: scroll;
-  touch-action: manipulation !important;
 }
 .page-2 .arWrapper .image-box {
   height: 100%;
@@ -78,11 +77,14 @@
 }
 .point-box {
   z-index: 10;
+  position: fixed;
+  left: 0;
+  top: 0;
 }
 .point-box .point-1-box {
   background-image: url("../assets/images/page2/point-1-bg.jpg");
   background-repeat: no-repeat;
-  background-size: auto 100%;
+  background-size: 100% 100%;
   background-position: center;
 }
 .point-box .point-1-box .text-1 {
@@ -104,7 +106,7 @@
 .point-box .point-2-box {
   background-image: url("../assets/images/page2/point-2-bg.jpg");
   background-repeat: no-repeat;
-  background-size: auto 100%;
+  background-size: 100% 100%;
   background-position: center;
 }
 .point-box .point-2-box .text-1 {
@@ -126,7 +128,7 @@
 .point-box .point-3-box {
   background-image: url("../assets/images/page2/point-3-bg.jpg");
   background-repeat: no-repeat;
-  background-size: auto 100%;
+  background-size: 100% 100%;
   background-position: center;
 }
 .point-box .point-3-box .text {

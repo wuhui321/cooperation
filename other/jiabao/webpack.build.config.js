@@ -6,7 +6,7 @@ const cleanWebpackPlugin = require('clean-webpack-plugin');
 const page = require("./webpack.config.data");
 module.exports = {
     entry: {
-        video: path.resolve(__dirname, './src/scripts/app.js')
+        app: path.resolve(__dirname, './src/scripts/app.js')
     },
     output: {
         filename: '[name].bundle.js',
@@ -56,7 +56,7 @@ module.exports = {
         new htmlWebpackPlugin({
             template: './src/app.html',
             filename: 'app.html',
-            chunks: ['video'],
+            chunks: ['app'],
             title: page.title,
             shareTitle: page.shareTitle,
             shareDesc: page.shareDesc,

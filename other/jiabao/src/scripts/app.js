@@ -6,7 +6,7 @@ require("../less/style.less");
 require("../less/page-2.less");
 require("../less/page-3.less");
 const Swiper = require("../scripts/lib/swiper-4.2.0.min");
-const IScroll = require("../scripts/lib/iscroll");
+// const IScroll = require("../scripts/lib/iscroll");
 require("pixi.js");
 
 var FRAME_IMG = [];
@@ -41,7 +41,13 @@ const LOAD_IMG = [
     require("../assets/images/page2/point-3.png"),
     require("../assets/images/page2/text.png")
 ];
-// LOAD_IMG = LOAD_IMG.concat(frame_start);
+FRAME_IMG = FRAME_IMG.concat([
+    require("../assets/images/page3/bg.jpg"),
+    require("../assets/images/page3/btn.png"),
+    require("../assets/images/page3/text-1.png"),
+    require("../assets/images/page3/text-2-1.png"),
+    require("../assets/images/page3/text-2-2.png")
+]);
 
 var u = navigator.userAgent,
     isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1,
@@ -96,7 +102,6 @@ webHandle = {
                             case 0:
                                 break;
                             case 1:
-                                $("#text1").removeClass("hide");
                                 // $("#linkBtn").one("click", (e) => {
                                 //     e.stopPropagation();
                                 //     _czc.push(["_trackEvent", "用户", "分享"]);
@@ -135,8 +140,9 @@ webHandle = {
             });
 
             $("#point1, #point2, #point3").one("click", function(e) {
+                console.log("point1");
                 e.stopPropagation();
-
+                $("#page2Text").addClass("block");
                 $("#pointBox").removeClass("hide");
                 $("#arWrapper").addClass("animated timing zoomOutBig");
                 $(".point-" + self.curPoint + "-box").removeClass("hide");
@@ -154,6 +160,7 @@ webHandle = {
 
                     webHandle.pixiAni.start();
                 }
+                $("#page2Text").removeClass("block");
                 $("#point" + (self.curPoint + 1)).removeClass("hide");
                 $("#arWrapper").removeClass(" animated timing zoomOutBig");
                 $("#pointBox").addClass("hide");
@@ -167,11 +174,11 @@ webHandle = {
             });
         },
         init() {
-            this.scrollObj = new IScroll("#arWrapper", {
-                fixedScrollbar: true,
-                bounce: false
-            });
-            this.scrollObj.scrollTo(-400, 0);
+            // this.scrollObj = new IScroll("#arWrapper", {
+            //     fixedScrollbar: true,
+            //     bounce: false
+            // });
+            // this.scrollObj.scrollTo(-400, 0);
             // this.scrollObj.on('scrollStart', function() {
             //     minX = this.x; // console.log(this);
             // });
@@ -211,18 +218,24 @@ webHandle = {
             self.aniSprite = new PIXI.Sprite(self.startTexture[0]);
             aniApp.stage.addChild(self.aniSprite);
             aniApp.renderer.render(self.aniSprite);
-            setInterval(function() {
+            let loopFlag = setInterval(function() {
                 if (self.flag && self.flag === 'start') {
-                    if (self.imgCount < FRAME_IMG.length - 1) {
+                    if (self.imgCount < 38) {
                         self.aniSprite.texture = self.startTexture[self.imgCount];
-                        console.log(self.imgCount);
                         self.imgCount++;
                     } else {
-                        self.imgCount = 0;
                         self.flag = "end";
+                        clearInterval(loopFlag);
 
-                        $(".step-1").addClass("hide").remove();
-                        $(".step-2").removeClass("hide");
+                        $("#text1").removeClass("hide").on("webkitAnimationEnd", () => {
+                            $(".step-1").addClass("animated timing fillMode delay-3 fadeOut");
+                            $(".step-1").on("webkitAnimationEnd", function() {
+                                // $(this).remove();
+                                setTimeout(() => {
+                                    $(".step-2").removeClass("hide");
+                                }, 3500);
+                            });
+                        });
                     }
                 }
             }, 60);

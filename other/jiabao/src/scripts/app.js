@@ -155,7 +155,7 @@ webHandle = {
 
             $("#backBtn").on("click", () => {
                 if (self.curPoint >= 3) {
-                    $("#page2").addClass("hide");
+                    $("#page2").addClass("hide").remove();
                     $(".step-1").removeClass("hide");
 
                     webHandle.pixiAni.start();
@@ -164,6 +164,9 @@ webHandle = {
                 $("#point" + (self.curPoint + 1)).removeClass("hide");
                 $("#arWrapper").removeClass(" animated timing zoomOutBig");
                 $("#pointBox").addClass("hide");
+                if (self.curPoint >= 3) {
+                    $("#pointBox").remove();
+                }
                 self.curPoint++;
 
             });
@@ -228,7 +231,7 @@ webHandle = {
                         clearInterval(loopFlag);
 
                         $("#text1").removeClass("hide").on("webkitAnimationEnd", () => {
-                            $(".step-1").addClass("animated timing fillMode delay-3 fadeOut");
+                            $(".step-1").addClass("animated timing fillMode delay-2 fadeOut");
                             $(".step-1").on("webkitAnimationEnd", function() {
                                 // $(this).remove();
                                 setTimeout(() => {
@@ -261,6 +264,7 @@ webHandle = {
         $("#pageOneBtn").one("click", (e) => {
             e.stopPropagation();
             webHandle.page2.show();
+            $(".page-1").html("");
         });
     }
 };

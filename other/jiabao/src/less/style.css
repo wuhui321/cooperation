@@ -30,6 +30,11 @@ body {
   background-size: 100% auto;
   background-position: top;
 }
+.container-box {
+  position: fixed;
+  left: 0;
+  top: 0;
+}
 .page-1 {
   background-image: url("../assets/images/page1/bg.jpg");
   background-repeat: no-repeat;

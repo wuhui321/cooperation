@@ -1,7 +1,7 @@
 module.exports = {
-    title: '阿迪达斯2018校园招聘',
-    shareTitle: '阿迪达斯2018校园招聘正式启动，打破界限，等你来!',
-    shareDesc: '网申系统9月15日上线，精彩MV带你领略阿迪freestyle',
-    shareUrl: '',
-    shareImg: 'https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1505460920145/share.jpg'
+    title: '点击探索，给宝宝___的第一口',
+    shareTitle: '点击探索，给宝宝___的第一口',
+    shareDesc: '抢先感受嘉宝农场亲临视觉，参与探索开启红包大抽奖！',
+    shareUrl: 'http://m.letlike.com/case/2018/gerber/farmvr/testv1/app.html',
+    shareImg: 'https://ks3-cn-beijing.ksyun.com/static.toptest.yidianzixun.com/public/file/1522404328216/share.jpg'
 };

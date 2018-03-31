@@ -37,18 +37,18 @@ module.exports = {
                 }
             }
         }, {
-            test: /\.(png|svg|jpg|gif)$/,
-            use: [
-                'file-loader?name=images/[hash].[ext]'
-            ]
-        }, {
             // test: /\.(png|jpg|gif)$/,
             // use: [{
-            //     loader: 'url-loader',
+            //     loader: 'url-loader?name=images/[hash].[ext]',
             //     options: {
             //         limit: 8192
             //     }
             // }]
+        }, {
+            test: /\.(png|svg|jpg|gif)$/,
+            use: [
+                'file-loader?name=images/[hash].[ext]'
+            ]
         }, {
             // test: /\.(htm|html)$/i,
             // use: ['html-withimg-loader']

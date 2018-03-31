@@ -6,7 +6,7 @@ require("../less/style.less");
 require("../less/page-2.less");
 require("../less/page-3.less");
 const Swiper = require("../scripts/lib/swiper-4.2.0.min");
-require("pixi.js");
+// require("pixi.js");
 
 var FRAME_IMG = [];
 for (var i = 0; i < 38; i++) {
@@ -141,7 +141,8 @@ webHandle = {
                     $("#page2").addClass("hide").remove();
                     $(".step-1").removeClass("hide");
 
-                    webHandle.pixiAni.start();
+                    // webHandle.pixiAni.start();
+                    webHandle.bgAni.start();
                 }
                 $("#page2Text").removeClass("block");
                 $("#point" + (self.curPoint + 1)).removeClass("hide");
@@ -149,6 +150,7 @@ webHandle = {
                 $("#pointBox").addClass("hide");
                 if (self.curPoint >= 3) {
                     $("#pointBox").remove();
+                    webHandle.page2.removeDevice();
                 }
 
                 self.curPoint++;
@@ -183,9 +185,13 @@ webHandle = {
                 }
             }, false);
         },
+        removeDevice() {
+            window.removeEventListener('deviceorientation');
+        },
         loadFruitsImg() {
             webHandle.load.start(FRAME_IMG, () => {
-                webHandle.pixiAni.init();
+                // webHandle.pixiAni.init();
+                webHandle.bgAni.init();
             });
         },
         init() {
@@ -197,30 +203,77 @@ webHandle = {
             this.loadFruitsImg();
         }
     },
-    pixiAni: {
+    // pixiAni: {
+    //     $DOM: null,
+    //     aniApp: null,
+    //     startTexture: [],
+    //     loopTexture: [],
+    //     flag: null,
+    //     imgCount: 0,
+    //     aniSprite: null,
+    //     start() {
+    //         var self = this,
+    //             aniApp = self.aniApp;
+
+    //         FRAME_IMG.forEach(function(item) {
+    //             var tmp = PIXI.Texture.fromImage(item);
+    //             self.startTexture.push(tmp);
+    //         });
+
+    //         self.aniSprite = new PIXI.Sprite(self.startTexture[0]);
+    //         aniApp.stage.addChild(self.aniSprite);
+    //         aniApp.renderer.render(self.aniSprite);
+    //         let loopFlag = setInterval(function() {
+    //             if (self.flag && self.flag === 'start') {
+    //                 if (self.imgCount < 38) {
+    //                     self.aniSprite.texture = self.startTexture[self.imgCount];
+    //                     self.imgCount++;
+    //                     if (self.imgCount == 5) {
+    //                         self.textAni();
+    //                     }
+    //                 } else {
+    //                     self.flag = "end";
+    //                     clearInterval(loopFlag);
+    //                 }
+    //             }
+    //         }, 60);
+    //         setTimeout(() => {
+    //             this.flag = "start";
+    //         }, 300);
+    //     },
+    //     textAni() {
+    //         $("#text1").removeClass("hide").on("webkitAnimationEnd", () => {
+    //             $(".step-1").addClass("animated timing fillMode delay-1 fadeOut");
+    //             $(".step-1").on("webkitAnimationEnd", function() {
+    //                 setTimeout(() => {
+    //                     $(".step-2").removeClass("hide");
+    //                 }, 1500);
+    //             });
+    //         });
+    //     },
+    //     init() {
+    //         var self = this,
+    //             $DOM,
+    //             aniApp;
+    //         $DOM = self.$DOM = $("#fruits");
+    //         aniApp = self.aniApp = new PIXI.Application(640, 1008, { transparent: true, antialias: true });
+    //         $DOM.html(aniApp.view);
+    //     }
+    // },
+    bgAni: {
         $DOM: null,
-        aniApp: null,
-        startTexture: [],
-        loopTexture: [],
         flag: null,
         imgCount: 0,
-        aniSprite: null,
         start() {
-            var self = this,
-                aniApp = self.aniApp;
+            var self = this;
 
-            FRAME_IMG.forEach(function(item) {
-                var tmp = PIXI.Texture.fromImage(item);
-                self.startTexture.push(tmp);
-            });
-
-            self.aniSprite = new PIXI.Sprite(self.startTexture[0]);
-            aniApp.stage.addChild(self.aniSprite);
-            aniApp.renderer.render(self.aniSprite);
             let loopFlag = setInterval(function() {
                 if (self.flag && self.flag === 'start') {
                     if (self.imgCount < 38) {
-                        self.aniSprite.texture = self.startTexture[self.imgCount];
+                        // self.$DOM.css({
+                        //     "background-image": "url(" + FRAME_IMG[self.imgCount] + ")"
+                        // });
+                        $("#fruitsImg").attr("src", FRAME_IMG[self.imgCount]);
                         self.imgCount++;
                         if (self.imgCount == 5) {
                             self.textAni();
@@ -247,11 +300,8 @@ webHandle = {
         },
         init() {
             var self = this,
-                $DOM,
-                aniApp;
+                $DOM;
             $DOM = self.$DOM = $("#fruits");
-            aniApp = self.aniApp = new PIXI.Application(640, 1008, { transparent: true, antialias: true });
-            $DOM.html(aniApp.view);
         }
     },
     audioService: {

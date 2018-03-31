@@ -16,6 +16,13 @@
   background-size: auto 100%;
   background-position: center;
 }
+.page-3 .step-1 .fruits img {
+  width: 100%;
+  display: block;
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
 .page-3 .step-1 .fruits canvas {
   height: 100%;
 }

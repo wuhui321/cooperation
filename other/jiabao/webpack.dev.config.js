@@ -66,7 +66,7 @@ module.exports = {
             shareTitle: page.shareTitle,
             shareDesc: page.shareDesc,
             shareUrl: page.shareUrl,
-            shareImg: page.shareUrl
+            shareImg: page.shareImg
         }),
         new extractTextPlugin("./css/[name].styles.css"),
         // new extractTextPlugin("[name].styles.css"),

@@ -63,7 +63,7 @@ module.exports = {
             shareTitle: page.shareTitle,
             shareDesc: page.shareDesc,
             shareUrl: page.shareUrl,
-            shareImg: page.shareUrl,
+            shareImg: page.shareImg,
             minify: {
                 removeComments: true,
                 collapseWhitespace: true,

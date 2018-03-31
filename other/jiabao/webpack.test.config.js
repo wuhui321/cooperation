@@ -11,8 +11,8 @@ module.exports = {
     output: {
         filename: './js/[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
-        // publicPath: 'https://t1toptest.yidianzixun.com/cooperation/jiabao' + (+new Date()) + '/'
-        publicPath: 'http://m.letlike.com/case/2018/gerber/farmvr/testv1/'
+        publicPath: 'https://t1toptest.yidianzixun.com/cooperation/jiabao' + (+new Date()) + '/'
+            // publicPath: 'http://m.letlike.com/case/2018/gerber/farmvr/testv1/20180331/'
     },
     module: {
         rules: [{

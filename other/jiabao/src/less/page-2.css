@@ -134,7 +134,7 @@
 .point-box .point-3-box .text {
   background-image: url("../assets/images/page2/point-3-text.png");
   background-repeat: no-repeat;
-  background-size: auto 100%;
+  background-size: 100% auto;
   background-position: center;
 }
 .point-box .back-btn {
@@ -147,6 +147,21 @@
   bottom: 10px;
   background: transparent;
   background-image: url("../assets/images/page2/back-btn.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
+.point-box .next-btn {
+  border: none;
+  outline: none;
+  width: 166px;
+  height: 32px;
+  position: absolute;
+  left: 50%;
+  bottom: 4%;
+  margin-left: -83px;
+  background: transparent;
+  background-image: url("../assets/images/page2/next-btn.png");
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;

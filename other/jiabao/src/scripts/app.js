@@ -6,7 +6,6 @@ require("../less/style.less");
 require("../less/page-2.less");
 require("../less/page-3.less");
 const Swiper = require("../scripts/lib/swiper-4.2.0.min");
-// const IScroll = require("../scripts/lib/iscroll");
 require("pixi.js");
 
 var FRAME_IMG = [];
@@ -102,13 +101,6 @@ webHandle = {
                             case 0:
                                 break;
                             case 1:
-                                // $("#linkBtn").one("click", (e) => {
-                                //     e.stopPropagation();
-                                //     _czc.push(["_trackEvent", "用户", "分享"]);
-                                //     setTimeout(() => {
-                                //         window.open("http://wx2.ismartgo.com/wxgame/game/gerberapr1173/shakeAndRemind.do");
-                                //     }, 500);
-                                // });
                                 break;
                         }
                     }
@@ -123,21 +115,7 @@ webHandle = {
             let self = this;
             this.init();
             $("#page2, #leftBtn, #rightBtn").removeClass("hide");
-            // $("#leftBtn").on("click", (e) => {
-            //     e.stopPropagation();
-            //     console.log('left');
-            //     this.scrollObj.scrollBy(5, 0);
-            // });
-
-            // $("#rightBtn").on("click", (e) => {
-            //     e.stopPropagation();
-            //     console.log('right');
-            //     this.scrollObj.scrollBy(-5, 0);
-            // });
-
-            $("#leftBtn, #rightBtn").on("webkitAnimationEnd", function() {
-                $(this).addClass("hide");
-            });
+            $("#arWrapper").scrollLeft(400);
 
             $("#point1, #point2, #point3").one("click", function(e) {
                 console.log("point1");
@@ -150,10 +128,12 @@ webHandle = {
 
                 if (self.curPoint >= 3) {
                     webHandle.swiper.swiperObj.slideNext();
+                    $("#backBtn").hide();
+                    $("#nextBtn").show();
                 }
             });
 
-            $("#backBtn").on("click", () => {
+            $("#backBtn, #nextBtn").on("click", () => {
                 if (self.curPoint >= 3) {
                     $("#page2").addClass("hide").remove();
                     $(".step-1").removeClass("hide");
@@ -167,8 +147,17 @@ webHandle = {
                 if (self.curPoint >= 3) {
                     $("#pointBox").remove();
                 }
+
                 self.curPoint++;
 
+                switch (self.curPoint) {
+                    case 2:
+                        $("#leftBtn").removeClass("hide");
+                        break;
+                    case 3:
+                        $("#rightBtn").removeClass("hide");
+                        break;
+                }
             });
         },
         loadFruitsImg() {
@@ -177,22 +166,6 @@ webHandle = {
             });
         },
         init() {
-            // this.scrollObj = new IScroll("#arWrapper", {
-            //     fixedScrollbar: true,
-            //     bounce: false
-            // });
-            // this.scrollObj.scrollTo(-400, 0);
-            // this.scrollObj.on('scrollStart', function() {
-            //     minX = this.x; // console.log(this);
-            // });
-            // this.scrollObj.on('scroll', function() {
-            //     minX = minX < this.x ? minX : this.x; // console.log(this);
-            // });
-            // this.scrollObj.on('scrollEnd', function() {
-            //     minX = minX < this.x ? minX : this.x; //
-            //     if (this.x - minX > 10 && (this.directionX === 1)) { //加载
-            //     }
-            // });
             $("#page2Text").removeClass("hide");
             $("#page2Text").addClass("animated fillMode fadeOut").on("webkitAnimationEnd", () => {
                 $("#page2Text").hide().remove();
@@ -226,25 +199,28 @@ webHandle = {
                     if (self.imgCount < 38) {
                         self.aniSprite.texture = self.startTexture[self.imgCount];
                         self.imgCount++;
+                        if (self.imgCount == 5) {
+                            self.textAni();
+                        }
                     } else {
                         self.flag = "end";
                         clearInterval(loopFlag);
-
-                        $("#text1").removeClass("hide").on("webkitAnimationEnd", () => {
-                            $(".step-1").addClass("animated timing fillMode delay-2 fadeOut");
-                            $(".step-1").on("webkitAnimationEnd", function() {
-                                // $(this).remove();
-                                setTimeout(() => {
-                                    $(".step-2").removeClass("hide");
-                                }, 3500);
-                            });
-                        });
                     }
                 }
             }, 60);
             setTimeout(() => {
                 this.flag = "start";
             }, 300);
+        },
+        textAni() {
+            $("#text1").removeClass("hide").on("webkitAnimationEnd", () => {
+                $(".step-1").addClass("animated timing fillMode delay-1 fadeOut");
+                $(".step-1").on("webkitAnimationEnd", function() {
+                    setTimeout(() => {
+                        $(".step-2").removeClass("hide");
+                    }, 1500);
+                });
+            });
         },
         init() {
             var self = this,
@@ -255,6 +231,18 @@ webHandle = {
             $DOM.html(aniApp.view);
         }
     },
+    audioService: {
+        $DOM: null,
+        play() {
+
+        },
+        pause() {
+
+        },
+        init() {
+
+        }
+    },
     init() {
         this.load.start(LOAD_IMG, () => {
             $("#loadingBox").hide().remove();
@@ -263,8 +251,13 @@ webHandle = {
 
         $("#pageOneBtn").one("click", (e) => {
             e.stopPropagation();
+
             webHandle.page2.show();
             $(".page-1").html("");
+        });
+
+        $("#leftBtn, #rightBtn").on("webkitAnimationEnd", function() {
+            $(this).addClass("hide");
         });
     }
 };

@@ -123,6 +123,110 @@
     </div>
     <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <!-- <script>
+        (function() {
+            var baseUrl = 'http://m.letlike.com/case/2018/gerber/farmvr/testv1/20180331/';
+            var shareTitle = '<%= htmlWebpackPlugin.options.shareTitle %>'; //分享朋友标题
+            var shareDesc = '<%= htmlWebpackPlugin.options.shareDesc %>'; //分享朋友描述
+            var tdesc = "<%= htmlWebpackPlugin.options.shareTitle %>"; //分享朋友圈描述
+            var shareImg = "<%= htmlWebpackPlugin.options.shareImg %>"; //分享图片地址
+            var shareLink = "<%= htmlWebpackPlugin.options.shareUrl %>"; //分享链接地址
+            var ua = navigator.userAgent.toLowerCase();
+            if (!(/micromessenger/.test(ua))) {
+                return false; //not wechat
+            }
+            var wechatShare = function(title, desc, link, img, tdesc) {
+                // 在这里调用 API
+                wx.onMenuShareAppMessage({
+                    title: title,
+                    desc: desc,
+                    link: link,
+                    imgUrl: img,
+                    trigger: function(res) {
+                        //alert('用户点击发送给朋友');
+                    },
+                    success: function(res) {
+                        shareClick();
+                    },
+                    cancel: function(res) {
+                        //alert('已取消');
+                    },
+                    fail: function(res) {
+                        //alert(JSON.stringify(res));
+                    }
+                });
+                wx.onMenuShareTimeline({
+                    title: tdesc,
+                    link: link,
+                    imgUrl: img,
+                    trigger: function(res) {
+                        //alert('用户点击分享到朋友圈');
+                    },
+                    success: function(res) {
+                        shareClick();
+                    },
+                    cancel: function(res) {
+                        //alert('已取消');
+                    },
+                    fail: function(res) {
+                        // alert(JSON.stringify(res));
+                    }
+                });
+                wx.onMenuShareQQ({
+                    title: title,
+                    desc: desc,
+                    link: link,
+                    imgUrl: img,
+                    success: function() {
+                        shareClick();
+                    },
+                    cancel: function() {}
+                });
+
+                wx.onMenuShareWeibo({
+                    title: title,
+                    desc: desc,
+                    link: link,
+                    imgUrl: img,
+                    success: function() {
+                        shareClick();
+                    },
+                    cancel: function() {}
+                });
+
+                function shareClick() {
+                    _czc.push(["_trackEvent", "用户", "分享"]);
+                }
+            }
+            $.getScript("http://wxproxy.letlike.com/GetJs.ashx?appid=wx4c0e08f21aa17163&url=" + encodeURIComponent(window.location.href), function() {
+                wx.config({
+                    debug: false,
+                    appId: nsJsApi.appId,
+                    timestamp: nsJsApi.timestamp,
+                    nonceStr: nsJsApi.nonceStr,
+                    signature: nsJsApi.signature,
+                    jsApiList: [
+                        'checkJsApi',
+                        'onMenuShareTimeline',
+                        'onMenuShareAppMessage',
+                        'onMenuShareQQ',
+                        'onMenuShareWeibo',
+                        'howOptionMenu',
+                        'hideMenuItems',
+                        'showMenuItems',
+                        'hideAllNonBaseMenuItem',
+                        'showAllNonBaseMenuItem'
+                    ]
+                });
+                wx.ready(function() {
+                    wechatShare(shareTitle, shareDesc, shareLink, shareImg, tdesc);
+                });
+                wx.error(function(res) {
+                    //alert(res);
+                });
+            });
+        })();
+    </script> -->
 </body>
 
 </html>

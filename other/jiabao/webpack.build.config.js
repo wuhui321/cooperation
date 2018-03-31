@@ -64,12 +64,12 @@ module.exports = {
             shareDesc: page.shareDesc,
             shareUrl: page.shareUrl,
             shareImg: page.shareImg,
-            minify: {
-                removeComments: true,
-                collapseWhitespace: true,
-                minifyCSS: true,
-                minifyJS: true
-            }
+            // minify: {
+            //     removeComments: true,
+            //     collapseWhitespace: true,
+            //     minifyCSS: true,
+            //     minifyJS: true
+            // }
         }),
         new extractTextPlugin("[name]." + (+new Date()) + ".styles.css"),
         new webpack.ProvidePlugin({

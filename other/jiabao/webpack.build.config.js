@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const extractTextPlugin = require("extract-text-webpack-plugin");
 const cleanWebpackPlugin = require('clean-webpack-plugin');
+// var ImageminPlugin = require('imagemin-webpack-plugin').default;
 const page = require("./webpack.config.data");
 module.exports = {
     entry: {
@@ -11,7 +12,7 @@ module.exports = {
     output: {
         filename: '[name].' + (+new Date()) + '.bundle.js',
         path: path.resolve(__dirname, 'dist'),
-        // publicPath: 'https://t1toptest.yidianzixun.com/cooperation/dajie/adidas_v1.0.0/'
+        publicPath: 'http://s.letlike.com/tmp/test/'
     },
     module: {
         rules: [{
@@ -41,6 +42,7 @@ module.exports = {
             test: /\.(png|svg|jpg|gif)$/,
             use: [
                 'file-loader?name=images/[hash].[ext]'
+                // 'file-loader?name=images/[hash].[ext]&outputPath=http://s.letlike.com/tmp/test/'
                 // 'file-loader'
             ]
         }, {
@@ -80,6 +82,11 @@ module.exports = {
                 warnings: false,
                 drop_console: false,
             }
-        })
+        }),
+        // new ImageminPlugin({
+        //     pngquant: {
+        //         quality: '50'
+        //     }
+        // })
     ]
 };

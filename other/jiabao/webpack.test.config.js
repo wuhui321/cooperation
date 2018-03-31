@@ -12,7 +12,7 @@ module.exports = {
         filename: './js/[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
         // publicPath: 'https://t1toptest.yidianzixun.com/cooperation/jiabao' + (+new Date()) + '/'
-        publicPath: 'http://m.letlike.com/case/2018/gerber/farmvr/testv1/'
+        publicPath: 'http://m.letlike.com/case/2018/gerber/farmvr/testv1/03312300/'
     },
     module: {
         rules: [{

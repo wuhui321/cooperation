@@ -75,7 +75,7 @@
                     <div class="box text-2-1"></div>
                     <div class="box text-2-2 animated infinite timing fillMode fadeIn"></div>
                     <div class="box btn-img animated infinite timing fillMode delay-05 alternate zoomInBig"></div>
-                    <a target="_blank" href="http://wx2.ismartgo.com/wxgame/game/gerberapr1173/shakeAndRemind.do" onclick='_czc.push(["_trackEvent", "抽奖", "点击"]);'>
+                    <a target="_blank" href="http://wx2.ismartgo.com/wxgame/game/gerberapr1173/shakeAndRemind.do" onclick='setTimeout(function(){_czc.push(["_trackEvent", "抽奖", "点击"]);},100)'>
                         <button id="linkBtn" class="link-btn"></button>
                     </a>
                 </div>
@@ -127,9 +127,8 @@
     </div>
     <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-    <!-- <script>
+    <script>
         (function() {
-            var baseUrl = 'http://m.letlike.com/case/2018/gerber/farmvr/testv1/20180331/';
             var shareTitle = '<%= htmlWebpackPlugin.options.shareTitle %>'; //分享朋友标题
             var shareDesc = '<%= htmlWebpackPlugin.options.shareDesc %>'; //分享朋友描述
             var tdesc = "<%= htmlWebpackPlugin.options.shareTitle %>"; //分享朋友圈描述
@@ -230,7 +229,7 @@
                 });
             });
         })();
-    </script> -->
+    </script>
 </body>
 
 </html>

@@ -9,7 +9,7 @@ module.exports = {
         app: path.resolve(__dirname, './src/scripts/app.js')
     },
     output: {
-        filename: '[name].bundle.js',
+        filename: '[name].' + (+new Date()) + '.bundle.js',
         path: path.resolve(__dirname, 'dist'),
         // publicPath: 'https://t1toptest.yidianzixun.com/cooperation/dajie/adidas_v1.0.0/'
     },
@@ -69,7 +69,7 @@ module.exports = {
                 minifyJS: true
             }
         }),
-        new extractTextPlugin("[name].styles.css"),
+        new extractTextPlugin("[name]." + (+new Date()) + ".styles.css"),
         new webpack.ProvidePlugin({
             $: "jquery",
             jQuery: "jquery",

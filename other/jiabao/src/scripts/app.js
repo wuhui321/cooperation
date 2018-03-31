@@ -266,14 +266,11 @@ webHandle = {
         imgCount: 0,
         start() {
             var self = this;
-
             let loopFlag = setInterval(function() {
                 if (self.flag && self.flag === 'start') {
                     if (self.imgCount < 38) {
-                        // self.$DOM.css({
-                        //     "background-image": "url(" + FRAME_IMG[self.imgCount] + ")"
-                        // });
-                        $("#fruitsImg").attr("src", FRAME_IMG[self.imgCount]);
+
+                        $("#fruitsImg").attr("src", FRAME_IMG[self.imgCount]).css("opacity", 1);;
                         self.imgCount++;
                         if (self.imgCount == 5) {
                             self.textAni();
@@ -283,7 +280,7 @@ webHandle = {
                         clearInterval(loopFlag);
                     }
                 }
-            }, 60);
+            }, 100);
             setTimeout(() => {
                 this.flag = "start";
             }, 300);

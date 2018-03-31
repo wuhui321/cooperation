@@ -40,12 +40,17 @@
   height: 25%;
 }
 .page-2 .text {
-  background-image: url("../assets/images/page2/text.png");
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-position: center;
-  -webkit-animation-delay: 5s;
-  animation-delay: 5s;
+  position: absolute;
+  left: 0;
+  top: 23%;
+  width: 100%;
+  height: auto;
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
+}
+.page-2 .text img {
+  width: 100%;
+  display: block;
 }
 .page-2 .btn-common {
   width: 40px;
@@ -55,8 +60,8 @@
   border: none;
   top: 78%;
   z-index: 20;
-  -webkit-animation-iteration-count: 3;
-  animation-iteration-count: 3;
+  -webkit-animation-iteration-count: 6;
+  animation-iteration-count: 6;
 }
 .page-2 .left-btn {
   background-image: url("../assets/images/page2/left-btn.png");

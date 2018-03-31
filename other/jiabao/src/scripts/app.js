@@ -53,7 +53,9 @@ var u = navigator.userAgent,
     isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
     isWeixinBrowser = (/micromessenger/i).test(navigator.userAgent),
     webHandle,
-    minX;;
+    minX,
+    timefragment = 0, // 时间片计时
+    nowts = 0; // 当前时间;
 
 webHandle = {
     load: {
@@ -116,6 +118,7 @@ webHandle = {
             this.init();
             $("#page2, #leftBtn, #rightBtn").removeClass("hide");
             $("#arWrapper").scrollLeft(700);
+            self.deviceService();
 
             $("#point1, #point2, #point3").one("click", function(e) {
                 console.log("point1");
@@ -159,6 +162,26 @@ webHandle = {
                         break;
                 }
             });
+        },
+        deviceService() {
+            window.addEventListener('deviceorientation', function(evt) {
+                nowts = new Date().getTime();
+                if (nowts - timefragment > 37) {
+                    timefragment = nowts;
+                    var alpha = evt.alpha, //垂直于屏幕的轴 0 ~ 360
+                        beta = evt.beta, //横向 X 轴 -180 ~ 180
+                        gamma = evt.gamma; //纵向 Y 轴 -90 ~ 90
+
+                    var left = $("#arWrapper").scrollLeft();
+
+                    var _left;
+                    _left = left + (gamma / 90 * 30);
+
+                    console.log(gamma);
+
+                    $("#arWrapper").scrollLeft(_left);
+                }
+            }, false);
         },
         loadFruitsImg() {
             webHandle.load.start(FRAME_IMG, () => {

@@ -115,7 +115,7 @@ webHandle = {
             let self = this;
             this.init();
             $("#page2, #leftBtn, #rightBtn").removeClass("hide");
-            $("#arWrapper").scrollLeft(400);
+            $("#arWrapper").scrollLeft(700);
 
             $("#point1, #point2, #point3").one("click", function(e) {
                 console.log("point1");
@@ -233,14 +233,39 @@ webHandle = {
     },
     audioService: {
         $DOM: null,
-        play() {
+        $player: null,
+        play(player) {
+            let $box = this.$DOM;
 
+            player.play();
+            $box.removeClass("audio-close-icon").addClass("audio-open-icon");
+            $box.attr('flag', 'open');
         },
-        pause() {
-
+        pause(player) {
+            let $box = this.$DOM;
+            player.pause();
+            $box.removeClass("audio-open-icon").addClass("audio-close-icon");
+            $box.attr('flag', 'close');
         },
         init() {
+            let self = this;
+            self.$player = $("#audioPlayer").get(0);
+            self.$DOM = $("#audioBtn");
 
+            self.$DOM.on("click", (e) => {
+                let flag = self.$DOM.attr("flag");
+                if (flag === "close") {
+                    self.play(self.$player);
+                } else {
+                    self.pause(self.$player);
+                }
+            });
+            self.play(self.$player);
+            document.addEventListener("WeixinJSBridgeReady", () => {
+                setTimeout(() => {
+                    self.play(self.$player);
+                }, 500);
+            }, false);
         }
     },
     init() {
@@ -248,6 +273,8 @@ webHandle = {
             $("#loadingBox").hide().remove();
             this.swiper.init();
         });
+
+        this.audioService.init();
 
         $("#pageOneBtn").one("click", (e) => {
             e.stopPropagation();

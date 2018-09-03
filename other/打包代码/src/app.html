@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!--手机号码不被显示为拨号链接-->
+    <meta name="format-detection" content="telephone=no">
+    <!-- 浏览器全屏显示-->
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+
+    <!-- QQ分享-->
+    <meta itemprop="name" content="<%= htmlWebpackPlugin.options.shareTitle %>">
+    <meta itemprop="description" content="<%= htmlWebpackPlugin.options.shareDesc %>">
+    <meta itemprop="image" content="<%= htmlWebpackPlugin.options.shareImg %>">
+
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+
+    <script>
+        var _czc;
+    </script>
+</head>
+
+<body>
+    <section id="loadingBox" class="loading-box">
+        <div id="fountainG">
+            <div id="fountainG_1" class="fountainG"></div>
+            <div id="fountainG_2" class="fountainG"></div>
+            <div id="fountainG_3" class="fountainG"></div>
+            <div id="fountainG_4" class="fountainG"></div>
+            <div id="fountainG_5" class="fountainG"></div>
+            <div id="fountainG_6" class="fountainG"></div>
+            <div id="fountainG_7" class="fountainG"></div>
+            <div id="fountainG_8" class="fountainG"></div>
+        </div>
+    </section>
+    <audio id="audioPlayer" src="http://s.letlike.com/2018/gerber/farmvr/extra/video.mp3" autoplay loop class="audio-player"></audio>
+
+    <button id="audioBtn" flag="close" class="audio-box audio-open-icon"></button>
+
+    <div class="swiper-container box container-box" style="position: fixed;left:0;top:0;">
+        <div class="swiper-wrapper box">
+            <div id="page1" class="swiper-slide stop-swiping box page-1">
+                <div class="box logo"></div>
+                <div class="box title animated fadeInDownSmall"></div>
+                <div class="box bowl animated fadeInUpSmall"></div>
+                <div class="box baby-box animated fadeInRight">
+                    <div class="box baby"></div>
+                    <div class="box glass animated infinite fillMode alternate zoomIn"></div>
+                    <div class="box hint"></div>
+                </div>
+                <div class="box star-box">
+                    <div class="box star-1 animated infinite timing fillMode alternate fadeIn"></div>
+                    <div class="box star-2 animated infinite timing fillMode alternate fadeOut"></div>
+                </div>
+                <button id="pageOneBtn" class="box next-page-btn"></button>
+            </div>
+            <div class="swiper-slide stop-swiping box page-3">
+                <div class="box logo"></div>
+                <div class="box bowl"></div>
+                <div class="box step-1 hide">
+                    <div id="text1" class="box text-1 animated timing fillMode fadeInUp hide"></div>
+                    <div id="fruits" class="box fruits">
+                        <img id="fruitsImg" src="#">
+                    </div>
+                </div>
+                <div class="box step-2 hide">
+                    <div class="box text-2-1"></div>
+                    <div class="box text-2-2 animated infinite timing fillMode fadeIn"></div>
+                    <div class="box btn-img animated infinite timing fillMode delay-05 alternate zoomInBig"></div>
+                    <a target="_blank" href="javascript:void(0);" onclick='_czc.push(["_trackEvent", "抽奖", "点击"]);setTimeout(function(){window.location.href = "http://wx2.ismartgo.com/wxgame/game/gerberapr1173/shakeAndRemind.do"},100)'>
+                        <button id="linkBtn" class="link-btn"></button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="page2" class="box page-2 container-box hide">
+        <div id="arWrapper" class="box arWrapper">
+            <div class="image-box">
+                <img class="video-img" src="http://s.letlike.com/2018/gerber/farmvr/extra/video.jpg">
+                <div id="point1" class="box point-1 animated infinite alternate fadeIn">
+                    <img src="http://s.letlike.com/2018/gerber/farmvr/extra/point-1.png">
+                </div>
+                <div id="point2" class="box point-2 animated infinite alternate fadeIn hide">
+                    <img src="http://s.letlike.com/2018/gerber/farmvr/extra/point-2.png">
+                </div>
+                <div id="point3" class="box point-3 animated infinite alternate fadeIn hide">
+                    <img src="http://s.letlike.com/2018/gerber/farmvr/extra/point-3.png">
+                </div>
+            </div>
+        </div>
+        <div class="box logo"></div>
+        <div id="page2Text" class="box text animated fadeInUpSmall hide">
+            <img src="http://s.letlike.com/2018/gerber/farmvr/extra/text.png">
+        </div>
+        <button id="leftBtn" class="box btn-common left-btn animated timing fadeIn hide"></button>
+        <button id="rightBtn" class="box btn-common right-btn animated timing fadeIn hide"></button>
+    </div>
+    <div id="pointBox" class="box point-box animated timing fadeIn hide">
+        <div class="box point-1-box hide">
+            <div class="box text-1 animated fadeInUpSmall"></div>
+            <div class="box text-2 animated fadeInUpSmall"></div>
+        </div>
+        <div class="box point-2-box hide">
+            <div class="box text-1 animated fadeInUpSmall"></div>
+            <div class="box text-2 animated fadeInUpSmall"></div>
+        </div>
+        <div class="box point-3-box hide">
+            <div class="box text animated fadeInUpSmall"></div>
+        </div>
+        <button id="backBtn" class="back-btn"></button>
+        <button id="nextBtn" class="next-btn hide"></button>
+    </div>
+    <div style="display:none">
+        <script type="text/javascript">
+            var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+            document.write(unescape("%3Cspan id='cnzz_stat_icon_1273257868'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1273257868' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+    </div>
+    <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+        (function() {
+            var shareTitle = '<%= htmlWebpackPlugin.options.shareTitle %>'; //分享朋友标题
+            var shareDesc = '<%= htmlWebpackPlugin.options.shareDesc %>'; //分享朋友描述
+            var tdesc = "<%= htmlWebpackPlugin.options.shareTitle %>"; //分享朋友圈描述
+            var shareImg = "<%= htmlWebpackPlugin.options.shareImg %>"; //分享图片地址
+            var shareLink = "<%= htmlWebpackPlugin.options.shareUrl %>"; //分享链接地址
+            var ua = navigator.userAgent.toLowerCase();
+            if (!(/micromessenger/.test(ua))) {
+                return false; //not wechat
+            }
+            var wechatShare = function(title, desc, link, img, tdesc) {
+                // 在这里调用 API
+                wx.onMenuShareAppMessage({
+                    title: title,
+                    desc: desc,
+                    link: link,
+                    imgUrl: img,
+                    trigger: function(res) {
+                        //alert('用户点击发送给朋友');
+                    },
+                    success: function(res) {
+                        shareClick();
+                    },
+                    cancel: function(res) {
+                        //alert('已取消');
+                    },
+                    fail: function(res) {
+                        //alert(JSON.stringify(res));
+                    }
+                });
+                wx.onMenuShareTimeline({
+                    title: tdesc,
+                    link: link,
+                    imgUrl: img,
+                    trigger: function(res) {
+                        //alert('用户点击分享到朋友圈');
+                    },
+                    success: function(res) {
+                        shareClick();
+                    },
+                    cancel: function(res) {
+                        //alert('已取消');
+                    },
+                    fail: function(res) {
+                        // alert(JSON.stringify(res));
+                    }
+                });
+                wx.onMenuShareQQ({
+                    title: title,
+                    desc: desc,
+                    link: link,
+                    imgUrl: img,
+                    success: function() {
+                        shareClick();
+                    },
+                    cancel: function() {}
+                });
+
+                wx.onMenuShareWeibo({
+                    title: title,
+                    desc: desc,
+                    link: link,
+                    imgUrl: img,
+                    success: function() {
+                        shareClick();
+                    },
+                    cancel: function() {}
+                });
+
+                function shareClick() {
+                    _czc.push(["_trackEvent", "用户", "分享"]);
+                }
+            }
+            $.getScript("http://wxproxy.letlike.com/GetJs.ashx?appid=wx4c0e08f21aa17163&url=" + encodeURIComponent(window.location.href), function() {
+                wx.config({
+                    debug: false,
+                    appId: nsJsApi.appId,
+                    timestamp: nsJsApi.timestamp,
+                    nonceStr: nsJsApi.nonceStr,
+                    signature: nsJsApi.signature,
+                    jsApiList: [
+                        'checkJsApi',
+                        'onMenuShareTimeline',
+                        'onMenuShareAppMessage',
+                        'onMenuShareQQ',
+                        'onMenuShareWeibo',
+                        'howOptionMenu',
+                        'hideMenuItems',
+                        'showMenuItems',
+                        'hideAllNonBaseMenuItem',
+                        'showAllNonBaseMenuItem'
+                    ]
+                });
+                wx.ready(function() {
+                    wechatShare(shareTitle, shareDesc, shareLink, shareImg, tdesc);
+                });
+                wx.error(function(res) {
+                    //alert(res);
+                });
+            });
+        })();
+    </script>
+</body>
+
+</html>

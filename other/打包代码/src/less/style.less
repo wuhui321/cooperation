@@ -1,0 +1,137 @@
+html,
+body {
+    background-color: #0082b8;
+}
+
+.loading-box {
+    background-color: #0082b8;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+.hide{
+    display: none;
+}
+.block{
+    overflow: hidden;
+}
+.box {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.logo{
+    background-image: url("../assets/images/page1/logo.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: top;
+}
+.container-box{
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+.audio-player{
+    width: 1px;
+    height: 1px;
+
+    position: absolute;
+    left: -1000px;
+    top: -1000px;
+}
+
+.audio-box{
+    width: 35px;
+    height: 35px;
+
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    z-index: 20;
+
+    border: none;
+    background: transparent;
+    outline: none;
+}
+
+.audio-open-icon{
+    background: url("../assets/images/music/open.png") no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+.audio-close-icon{
+    background: url("../assets/images/music/close.png") no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+.page-1{
+    background-image: url("../assets/images/page1/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    .title{
+        background-image: url("../assets/images/page1/title.png");
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        background-position: center;
+    }
+    .bowl{
+        background-image: url("../assets/images/page1/bowl.png");
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        background-position: center;
+    }
+    .baby-box{
+        -webkit-animation-delay: .5s;
+        animation-delay: .5s;
+        .baby{
+            background-image: url("../assets/images/page1/baby.png");
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+        }
+        .glass{
+            background-image: url("../assets/images/page1/glass.png");
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+
+            -webkit-transform-origin: center 75%;
+            transform-origin: center 75%;
+        }
+        .hint{
+            background-image: url("../assets/images/page1/hint.png");
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+        }
+    }
+    .star-box{
+        .star-1{
+            background-image: url("../assets/images/page1/star-1.png");
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+        }
+        .star-2{
+            background-image: url("../assets/images/page1/star-2.png");
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+        }
+    }
+    .next-page-btn{
+        width: 31%;
+        height: 18%;
+        outline: none;
+        border: none;
+        left: 26%;
+        top: 62%;
+        background: transparent;
+    }
+}

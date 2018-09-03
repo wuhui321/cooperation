@@ -1,0 +1,76 @@
+.page-2 {
+  background-color: #0082b8;
+  z-index: 10;
+}
+.page-2 .arWrapper {
+  overflow: scroll;
+  touch-action: manipulation !important;
+}
+.page-2 .arWrapper .image-box {
+  height: 100%;
+  position: relative;
+}
+.page-2 .arWrapper .image-box .video-img {
+  height: 105%;
+}
+.page-2 .arWrapper .image-box .point-1 {
+  height: 105%;
+  width: auto;
+  left: 130%;
+}
+.page-2 .arWrapper .image-box .point-1 img {
+  height: 100%;
+}
+.page-2 .arWrapper .image-box .point-2 {
+  height: 105%;
+  width: auto;
+  left: 73%;
+}
+.page-2 .arWrapper .image-box .point-2 img {
+  height: 100%;
+}
+.page-2 .arWrapper .image-box .point-3 {
+  height: 105%;
+  width: auto;
+  left: 318%;
+}
+.page-2 .arWrapper .image-box .point-3 img {
+  height: 100%;
+}
+.page-2 .logo {
+  height: 25%;
+}
+.page-2 .text {
+  background-image: url("../images/page2/text.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
+}
+.btn-common {
+  width: 40px;
+  height: 40px;
+  outline: none;
+  background: transparent;
+  border: none;
+  top: 78%;
+  z-index: 20;
+}
+.left-btn {
+  background-image: url("../images/page2/left-btn.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  left: 5%;
+}
+.right-btn {
+  background-image: url("../images/page2/right-btn.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  right: 5%;
+  left: auto;
+}

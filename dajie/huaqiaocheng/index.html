@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+
+    <!-- QQ分享-->
+    <meta itemprop="name" content="华侨城集团2019校园招聘！">
+    <meta itemprop="description" content="创想只为梦想——寻找改变世界的力量！">
+    <meta itemprop="image" content="./image/share.jpg">
+
+    <link rel="stylesheet" href="./css/lib/swiper.min.css">
+    <link rel="stylesheet" href="./css/lib/animate.css">
+    <link rel="stylesheet" href="./css/app.css">
+
+    <title>华侨城集团2019校园招聘</title>
+</head>
+
+<body>
+    <section id="loadingBox" class="loading-box">
+        <img src="./image/loading/dajie.jpg" class="logo">
+        <img src="./image/loading/load_bg.png" class="flower">
+        <div class="plan">0</div>
+    </section>
+
+    <audio id="audioPlayer" src="./music/music.mp3" autoplay loop class="audio-player"></audio>
+    <section id="audioTool" flag="close" class="audio-box audio-open-icon"></section>
+
+    <section class="swiper-container swiper-container-h content-page">
+        <div class="swiper-wrapper">
+            <div id="page1" class="swiper-slide page-common page-1">
+                <img src="./image/logo.png" class="logo">
+                <div class="element-box" style="display:none;">
+                    <div class="element-box title"></div>
+                    <div class="element-box slogan1"></div>
+                    <div class="element-box slogan2"></div>
+                </div>
+                <img src="./image/next.png" class="next">
+            </div>
+            <div id="page2" class="swiper-slide page-common page-2">
+                <img src="./image/logo.png" class="logo">
+                <div class="element-box" style="display:none;">
+                    <div class="element-box title"></div>
+                    <div class="element-box text"></div>
+                    <div class="element-box hand"></div>
+                    <img src="./image/page2/cloud.png" class="cloud">
+                </div>
+                <img src="./image/star/star1.png" class="star1">
+                <img src="./image/star/star2.png" class="star2">
+                <img src="./image/star/star3.png" class="star3">
+                <img src="./image/star/star4.png" class="star4">
+                <img src="./image/next.png" class="next">
+            </div>
+            <div id="page3" class="swiper-slide page-common page-3 swiper-no-swiping">
+                <img src="./image/logo.png" class="logo">
+                <div class="element-box" style="display:none;">
+                    <div class="element-box title"></div>
+                    <div class="element-box line"></div>
+                    <div class="element-box text"></div>
+                    <div class="element-box square"></div>
+                    <div class="element-box left-cloud"></div>
+                    <div class="element-box right-cloud"></div>
+                    <div class="element-box line2"></div>
+                    <div class="element-box step-box">
+                        <img src="./image/page3/step1.png" data-flag="culture" class="step step1">
+                        <img src="./image/page3/step2.png" data-flag="travel" class="step step2">
+                        <img src="./image/page3/step3.png" data-flag="town" class="step step3">
+                    </div>
+                    <img src="./image/page3/hand.png" class="element-box hand">
+                    <img src="./image/page3/house.png" class="element-box house">
+                </div>
+                <!-- <img src="./image/next.png" class="next"> -->
+            </div>
+            <div id="page4" class="swiper-slide page-common page-4">
+                <img src="./image/logo.png" class="logo">
+                <div class="element-box" style="display:none;">
+                    <div class="element-box title"></div>
+                    <div class="element-box book"></div>
+                    <div class="element-box map"></div>
+                    <div class="element-box map-icon"></div>
+                    <!-- 旅游 -->
+                    <div class="p-box travel" style="display:none;">
+                        <img src="./image/page4/travel/p1.png" class="p p1">
+                        <img src="./image/page4/travel/p2.png" class="p p2">
+                        <img src="./image/page4/travel/p3.png" class="p p3">
+                        <img src="./image/page4/travel/p4.png" class="p p4">
+                        <img id="travel-p5" src="./image/page4/travel/p5.png" class="p p5">
+                    </div>
+                    <div class="p-box culture" style="display:none;">
+                        <img src="./image/page4/culture/p1.png" class="p p1">
+                        <img src="./image/page4/culture/p2.png" class="p p2">
+                        <img src="./image/page4/culture/p3.png" class="p p3">
+                        <img src="./image/page4/culture/p4.png" class="p p4">
+                        <img id="culture-p5" src="./image/page4/culture/p5.png" class="p p5">
+                    </div>
+                    <div class="p-box town" style="display:none;">
+                        <img src="./image/page4/town/p1.png" class="p p1">
+                        <img src="./image/page4/town/p2.png" class="p p2">
+                        <img src="./image/page4/town/p3.png" class="p p3">
+                        <img src="./image/page4/town/p4.png" class="p p4">
+                        <img id="town-p5" src="./image/page4/town/p5.png" class="p p5">
+                    </div>
+                    <!-- <div class="element-box swiper-container swiper-container-v">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide v-slide-1"></div>
+                            <div class="swiper-slide v-slide-2"></div>
+                            <div class="swiper-slide v-slide-3"></div>
+                            <div class="swiper-slide v-slide-4"></div>
+                        </div>
+                        <div class="swiper-pagination swiper-pagination-v"></div>
+                    </div> -->
+                </div>
+                <img src="./image/next.png" class="next">
+            </div>
+            <div id="page5" class="swiper-slide page-common page-5">
+                <img src="./image/logo.png" class="logo">
+                <div class="element-box" style="display:none;">
+                    <div class="element-box earth"></div>
+                    <div class="element-box title"></div>
+                    <div class="element-box line"></div>
+                    <div class="element-box left-cloud"></div>
+                    <div class="element-box right-cloud"></div>
+                    <div class="element-box tower"></div>
+                    <div class="element-box square"></div>
+                </div>
+                <img src="./image/star/star1.png" class="star1">
+                <img src="./image/star/star2.png" class="star2">
+                <img src="./image/star/star3.png" class="star3">
+                <img src="./image/star/star4.png" class="star4">
+                <img src="./image/next.png" class="next">
+            </div>
+            <div id="page6" class="swiper-slide page-common page-6">
+                <img src="./image/logo.png" class="logo">
+                <div class="element-box" style="display:none;">
+                    <div class="element-box point"></div>
+                    <div class="element-box title"></div>
+                    <div class="element-box line"></div>
+                    <div class="element-box text1"></div>
+                    <div class="element-box text2"></div>
+                    <div class="element-box text3"></div>
+                    <img src="./image/page6/o1.png" class="element-box o1">
+                    <img src="./image/page6/o2.png" class="element-box o2">
+                    <img src="./image/page6/o3.png" class="element-box o3">
+                </div>
+                <img src="./image/next.png" class="next">
+            </div>
+            <div id="page7" class="swiper-slide page-common page-7">
+                <img src="./image/logo.png" class="logo">
+                <div class="element-box" style="display:none;">
+                    <!-- <div class="element-box text"></div> -->
+                    <div class="element-box point1"></div>
+                    <div class="element-box point2"></div>
+                    <div class="element-box point3"></div>
+                </div>
+                <img src="./image/next.png" class="next">
+            </div>
+            <div id="page8" class="swiper-slide page-common page-8">
+                <img src="./image/logo.png" class="logo">
+                <div class="element-box" style="display:none;">
+                    <div class="element-box title"></div>
+                    <div class="element-box line"></div>
+                    <div class="element-box workflow"></div>
+                </div>
+                <img src="./image/next.png" class="next">
+            </div>
+            <div id="page9" class="swiper-slide page-common page-9">
+                <img src="./image/logo.png" class="logo">
+                <div class="element-box" style="display:none;">
+                    <div class="element-box title"></div>
+                    <div class="element-box line"></div>
+                    <div class="element-box list"></div>
+                </div>
+                <img src="./image/next.png" class="next">
+            </div>
+            <div id="page10" class="swiper-slide page-common page-10">
+                <img src="./image/logo.png" class="logo">
+                <div class="element-box" style="display:none;">
+                    <div class="element-box title"></div>
+                    <div class="element-box slogan"></div>
+                    <div class="element-box earth"></div>
+                    <div class="element-box circle"></div>
+                    <img src="./image/page10/erweima.png" class="erweima">
+                </div>
+                <img src="./image/star/star1.png" class="star1">
+                <img src="./image/star/star2.png" class="star2">
+                <img src="./image/star/star3.png" class="star3">
+                <img src="./image/star/star4.png" class="star4">
+                <img src="./image/next.png" class="next">
+            </div>
+            <div id="page11" class="swiper-slide page-common page-11">
+                <img src="./image/logo.png" class="logo">
+                <div class="element-box" style="display:none;">
+                    <!-- <div class="element-box title"></div>
+                    <div class="element-box line"></div> -->
+                    <div class="element-box slogan"></div>
+                    <div class="element-box earth"></div>
+                    <!-- <div class="element-box btn-guide"></div> -->
+                    <div class="element-box btn-guide1"></div>
+                    <div class="element-box btn-guide2"></div>
+                    <div class="element-box btn">
+                        <a href="https://track.dajie.com/RjrH6bz3Arirx" class="url"></a>
+                    </div>
+                </div>
+                <img src="./image/star/star1.png" class="star1">
+                <img src="./image/star/star2.png" class="star2">
+                <img src="./image/star/star3.png" class="star3">
+                <img src="./image/star/star4.png" class="star4">
+            </div>
+        </div>
+    </section>
+    <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/swiper.min.js"></script>
+    <script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <!-- <script src="//special.dajie.com/html/djappshare/dajieWebViewBridge.js"></script> -->
+    <script src="./js/app.js"></script>
+    <!-- <script src="./js/lib/sharewx.js"></script> -->
+</body>
+
+</html>

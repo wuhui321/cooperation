@@ -83,18 +83,18 @@ body {
 .audio-box {
   width: 35px;
   height: 35px;
-  position: absolute;
+  position: fixed;
   right: 10px;
   top: 10px;
-  z-index: 8;
+  z-index: 20;
 }
 .audio-open-icon {
-  background: url("../assets/images/content/m-open.png") no-repeat;
+  background: url("../assets/images/music/open.png") no-repeat;
   background-size: 100%;
   background-position: center;
 }
 .audio-close-icon {
-  background: url("../assets/images/content/m-close.png") no-repeat;
+  background: url("../assets/images/music/close.png") no-repeat;
   background-size: 100%;
   background-position: center;
 }

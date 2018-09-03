@@ -1,0 +1,58 @@
+.page-3 {
+  background-image: url("../assets/images/page3/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}
+.page-3 .bowl {
+  background-image: url("../assets/images/page1/bowl.png");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+}
+.page-3 .step-1 .text-1 {
+  background-image: url("../assets/images/page3/text-1.png");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+}
+.page-3 .step-1 .fruits img {
+  width: 100%;
+  display: block;
+  opacity: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.page-3 .step-1 .fruits canvas {
+  height: 100%;
+}
+.page-3 .step-2 .text-2-1 {
+  background-image: url("../assets/images/page3/text-2-1.png");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+}
+.page-3 .step-2 .text-2-2 {
+  background-image: url("../assets/images/page3/text-2-2.png");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+}
+.page-3 .step-2 .btn-img {
+  background-image: url("../assets/images/page3/btn.png");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+  -webkit-transform-origin: center 85%;
+  transform-origin: center 85%;
+}
+.page-3 .step-2 .link-btn {
+  border: none;
+  outline: none;
+  background: transparent;
+  position: absolute;
+  left: 19%;
+  top: 79%;
+  width: 62%;
+  height: 13%;
+}

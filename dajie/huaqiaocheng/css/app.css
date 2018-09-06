@@ -451,7 +451,7 @@ body {
 .content-page .page-5 {
   background-image: url('../image/page5/bg.jpg');
   background-repeat: no-repeat;
-  background-size: auto 100%;
+  background-size: 100% 100%;
 }
 .content-page .page-5 .earth {
   background-image: url('../image/page5/earth.png');
@@ -596,7 +596,7 @@ body {
 .content-page .page-7 {
   background-image: url('../image/page7/bg.jpg');
   background-repeat: no-repeat;
-  background-size: auto 100%;
+  background-size: 100% 100%;
   background-position: top;
 }
 .content-page .page-7 .point1 {
